@@ -1,0 +1,52 @@
+.blog {
+  padding: 3%;
+  min-height: 70vh;
+}
+
+.blog__wrap {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  //   align-content: space-around;
+  flex-wrap: wrap;
+  @media (min-width: 920px) {
+    justify-content: space-around;
+  }
+}
+
+.instagram-media {
+  flex-basis: 51%;
+  // height: 30rem;
+  @media screen and (min-width: 920px) {
+    flex-basis: 20%;
+    // height: 50vh;
+  }
+  // height: fit-content;;
+}
+
+// section.blog
+//     padding-top: 2%
+//     min-height: 100vh
+//     div.wrapBlog
+//         display: flex
+//         justify-content: center
+//         flex-wrap: wrap
+//         padding-top: 5%
+//         article
+//             width: 30%
+//             // height: 30%
+//             @media screen and ( max-width: 920px )
+//                 width: 40%
+
+//             h2
+//                 text-align: center
+//                 // line-height: 70px
+//                 line-height: 250%
+//                 display: block
+
+//             img
+//                 display: block
+//                 width: 60%
+//                 margin: 0 auto
+//                 @media screen and ( max-width: 520px)
+//                     width: 80%

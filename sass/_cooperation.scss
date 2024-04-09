@@ -1,0 +1,57 @@
+.cooperationMe {
+  padding: 3%;
+}
+
+ul.taskCooperation {
+  margin: 0 auto 0 auto;
+  li {
+    display: flex;
+    align-items: center;
+
+    p {
+      padding-left: 10px;
+      font-size: 1.6rem;
+      line-height: 2em;
+    }
+  }
+}
+.cooperationMe__meProposal {
+  max-height: 110vh;
+  display: flex;
+  @media screen and (orientation: portrait), (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.cooperationMe__hoopPink {
+  margin: 0 auto;
+  position: relative;
+  height: 40vh;
+  width: 40vh;
+  max-width: 280px;
+  background-image: url('../img/back_circle.png');
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  @media screen and (orientation: landscape) {
+    min-height: 30rem;
+    width: 30%;
+  }
+
+  ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    li {
+      text-align: center;
+      line-height: 2em;
+      font-size: 1.8rem;
+
+      @media screen and (orientation: landscape) and (max-width: 720px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
