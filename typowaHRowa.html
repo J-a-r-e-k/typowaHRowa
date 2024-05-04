@@ -9,28 +9,41 @@
     <link rel="stylesheet" href="css/typowaHR.css" />
   </head>
   <body>
-    <nav class="nav">
-      <div class="nav__icon">
-        <i class="fa-solid fa-bars"></i>
+   
+    <header class="header">  
+      <div class="header__wrapNav">
+        <button class="header__logo">
+          <img
+            class="logo__icon"
+            src="img/TYpowa HRowa logo_Agatka.PNG"
+            alt="typowaHR logo"
+          />
+          <img class="logo__icon" src="img/podpis.png" alt="typowaHR logo" />
+        </button>
+        <nav class="nav">
+          <div class="nav__icon">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <ul class="nav__elements">
+            <li class="nav__element"><button class="nav__text" >poznajMY się</button></li>
+            <li class="nav__element"><button class="nav__text">TwoJA firma</button></li>
+            <li class="nav__element"><button class="nav__text">TY</button></li>
+            <li class="nav__element"><button class="nav__text" >porozmawiajMY</button></li>
+            <li class="nav__element"><button class="nav__text">blog</button></li>
+          </ul>
+          <!-- <ul class="nav__elements">
+            <li class="nav__element"><a href="#poznajMYsię" >poznajMY się</a></li>
+            <li class="nav__element"><a href="#TwoJAfirma">TwoJA firma</a></li>
+            <li class="nav__element"><a href="#TY">TY</a></li>
+            <li class="nav__element"><a href="#rekrutacje">rekrutacje</a></li>
+            <li class="nav__element"><a href="#porozmawiajMY">porozmawiajMY</a></li>
+            <li class="nav__element"><a href="#blog">blog</a></li>
+          </ul> -->
+        </nav>
+        
+
       </div>
-      <ul class="nav__elements">
-        <li class="nav__element">poznajMY się</li>
-        <li class="nav__element">TwoJA firma</li>
-        <li class="nav__element">TY</li>
-        <li class="nav__element">rekrutacje</li>
-        <li class="nav__element">porozmawiajMY</li>
-        <li class="nav__element">blog</li>
-      </ul>
-    </nav>
-    <header class="header">
-      <div class="header__logo">
-        <img
-          class="logo__icon"
-          src="img/TYpowa HRowa logo_Agatka.PNG"
-          alt="typowaHR logo"
-        />
-        <img class="logo__icon" src="img/podpis.png" alt="typowaHR logo" />
-      </div>
+      
       <img
         class="header__person"
         src="img/TypowaHRowa.png"
@@ -38,7 +51,7 @@
       />
     </header>
     <main>
-      <section class="aboutMe">
+      <section id="poznajMYsię" class="aboutMe ">
         <div class="me">
           <h1 class="me__name">Agata Sieniawska</h1>
           <p class="me__description">
@@ -92,14 +105,16 @@
             </div>
           </div>
         </div>
+        <!-- !!!!!! -->
         <button class="btn">
           <img class="btn__icon" src="img/arrow_pink.svg" alt="" />
-          <a class="btn__description">moje BIO</a>
+          <a class="btn__description btn__description--bio" >moje BIO</a>
         </button>
-        <!-- <div class="bio">
-          <img src="img/TypowaHRowa.png" alt="typowaHR" />
-          <section>
-            <i class="fa-regular fa-circle-xmark"></i>
+        <div class="bio">
+          <img class="photoBio" src="img/TypowaHRowa.png" alt="Serdecznie uśmiechająca sie Agata" />
+          <section class="bio__description">
+            <!-- <i class="fa-regular fa-circle-xmark"></i> -->
+            <p class="bio__close">X</p>
             <p>
               Nazywam się <span>Agata Sieniawska</span> i od 7 lat prowadzę
               firmę
@@ -129,12 +144,13 @@
               ludźmi w Twojej firmie, będziemy mieli <br />o czym rozmawiać.
             </p>
           </section>
-        </div> -->
-        <section class="partner">
-          <div class="nameSection">
-            <img class="nameSection__icon" src="img/circle_pink.svg" alt="" />
-            <p class="nameSection__title">moje współprace</p>
-          </div>
+        </div>
+        <div class="nameSection">
+          <img class="nameSection__icon" src="img/circle_pink.svg" alt="" />
+          <p class="nameSection__title">moje współprace</p>
+        </div>
+        <div class="partner">
+        
           <div class="partner__cooperation">
             <div class="partner__wrapDescription">
               <p class="partner__description">Branża automotive,</p>
@@ -218,9 +234,9 @@
               <span class="partner__Company"></span>
             </div>
           </div>
-        </section>
+        </div>
       </section>
-      <section class="cooperationMe">
+      <section id="TwoJAfirma" class="cooperationMe ">
         <div class="nameSection">
           <img class="nameSection__icon" src="img/circle_pink.svg" alt="" />
           <p class="nameSection__title">
@@ -286,9 +302,8 @@
             src="img/arrow_right.svg"
             alt=""
           />
-          <a class="btn__description" href=""
-            >Szczegółową ofertę znajdziesz TU</a
-          >
+          <p class="btn__description" 
+            >Szczegółową ofertę znajdziesz TU</p>
         </button>
         <div class="nameSection">
           <img class="nameSection__icon" src="img/circle_pink.svg" alt="" />
@@ -320,7 +335,7 @@
           </div>
         </div>
       </section>
-      <section class="you">
+      <section id="TY" class="you ">
         <div class="nameSection">
           <img class="nameSection__icon" src="img/circle_pink.svg" alt="" />
           <p class="nameSection__title nameSection__title--youChange">
@@ -380,13 +395,12 @@
             src="img/arrow_right.svg"
             alt=""
           />
-          <a class="btn__description" href=""
-            >Szczegółową ofertę znajdziesz TU</a
-          >
+          <p class="btn__description" 
+            >Szczegółową ofertę znajdziesz TU</p>
         </button>
       </section>
 
-      <section class="talkMe">
+      <section id="porozmawiajMY" class="talkMe ">
         <div class="nameSection">
           <img class="nameSection__icon" src="img/circle_pink.svg" alt="" />
           <p class="nameSection__title nameSection__title--youChange">
@@ -396,7 +410,7 @@
         <div class="talkMe__wrap">
           <div class="talkMe__contactElement">
             <img class="talkMe__icon" src="img/post.svg" alt="Email icon" />
-            <a class="talkMe__adres" href="">typowahr@gmail.com</a>
+            <a class="talkMe__adres" href="mailto:">typowahr@gmail.com</a>
           </div>
           <div class="talkMe__contactElement">
             <img
@@ -422,13 +436,14 @@
           </div>
         </div>
       </section>
-      <section class="blog">
+      <section  id="blog"class="blog ">
         <div class="nameSection">
           <img class="nameSection__icon" src="img/circle_pink.svg" alt="" />
           <p class="nameSection__title nameSection__title--youChange">
             TYpowa HRowa rozmowa
           </p>
         </div>
+
         <div class="blog__wrap">
           <blockquote
             class="instagram-media"
@@ -997,12 +1012,11 @@
           <script async src="//www.instagram.com/embed.js"></script>
         </div>
       </section>
-    </main>
+
     <script
       src="https://kit.fontawesome.com/387ebdee2b.js"
       crossorigin="anonymous"
     ></script>
-    <script src="typowaHr.js"></script>
-    <!-- <script src="typowaHRowa.js "></script> -->
+    <script src="typowaHRowa.js"></script>
   </body>
 </html>

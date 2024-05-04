@@ -2,7 +2,7 @@
   padding: 3%;
 }
 
-ul.taskCooperation {
+.taskCooperation {
   margin: 0 auto 0 auto;
   li {
     display: flex;
@@ -13,6 +13,19 @@ ul.taskCooperation {
       font-size: 1.6rem;
       line-height: 2em;
     }
+  }
+}
+
+.btn {
+  margin: 10px 10px 10px auto;
+  width: fit-content;
+  max-width: 60%;
+  height: fit-content;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  @media (min-width: 900px) {
+    margin-bottom: 50px;
   }
 }
 .cooperationMe__meProposal {

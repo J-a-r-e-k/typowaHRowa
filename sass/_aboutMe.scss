@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .me {
@@ -21,31 +22,18 @@
   padding: 5px 0 5px 0;
   font-size: 1.6rem;
   padding: 2%;
-  //   @media screen and (max-width: 920px) {
-  //     font-size: 1.2em;
-  //   }
 }
 
 .work {
   @media (min-width: 900px) {
     display: flex;
   }
-
-  //   justify-content: space-around;
-  //   margin: 50px 0 50px 0;
-  //   flex-direction: column;
-  //   align-items: center;
 }
 .work__myJob {
   margin: 1rem auto 0;
-  // display: flex;
-  // flex-wrap: wrap;
-  // margin: 0 auto;
-  // width: fit-content;
+
   padding: 0 5%;
   width: 70%;
-  // flex-direction: column;
-  //   background-color: #ccc;
 
   @media (orientation: landscape), (min-width: 720px) {
     width: 60%;
@@ -67,7 +55,6 @@
 }
 
 .work__collection {
-  // margin: 0 auto;
   width: fit-content;
 }
 .work__description {
@@ -75,16 +62,10 @@
   padding: 0 0 15px 60px;
   font-size: 1.7rem;
   white-space: nowrap;
-  //   @media screen and (max-width: 920px) {
-  //     font-size: 1.5em;
-  //     padding-left: 5%;
-  //   }
 }
 .work__description--mission {
   font-size: 1.7rem;
   line-height: 2em;
-  // @media screen and ( max-width: 920px)
-  //font-size: 1.3em
 }
 
 .partner {
@@ -102,7 +83,7 @@
 
   @media (min-width: 900px) {
     flex-direction: row;
-    // width: 60%;
+    width: 100%;
   }
   @media (orientation: landscape) and (max-width: 900px) {
     width: 90%;
@@ -155,6 +136,117 @@
 }
 
 // //* POPAP MOJE BIO
+.bio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+
+  @media (max-width: 1023px) and (orientation: portrait) {
+    flex-direction: column-reverse;
+  }
+}
+.photoBio {
+  // height: 70rem;
+  height: 30rem;
+  margin: 20px;
+  @media (max-width: 1024px) {
+    height: min(20vh, 80rem);
+    flex-shrink: 1;
+  }
+}
+.bio__description {
+  margin: 20px;
+  flex-shrink: 1;
+  max-height: 70%;
+  overflow: scroll;
+  @media (orientation: landscape) {
+    max-width: 60%;
+    max-height: fit-content;
+  }
+  p {
+    font-size: 1.6rem;
+    line-height: 2em;
+    @media (max-width: 1024px) {
+      // font-size: min(1.6vh, 1.6rem);
+      // font-size: clamp(1rem, 1vh + 1rem, 1.8rem);
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  span {
+    font-size: 2.5rem;
+    line-height: 2em;
+    font-weight: bold;
+    @media (max-width: 1024px) {
+      font-size: 1.2rem;
+      // font-size: clamp(1rem, 3vw + 1rem, 1.8rem);
+      // font-size: min(1.8vh, 1.8rem);
+    }
+  }
+
+  // background-color: red;
+}
+
+///
+
+// // //* POPAP MOJE BIO
+// .bio {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   z-index: 2;
+//   background-color: #f8f8f8;
+//   display: flex;
+//   flex-direction: column-reverse;
+//   align-items: center;
+// //   @media (min-width: 1024px) {
+// //     flex-direction: row;
+// flex-direction: column-reverse;
+// //   }
+// }
+// .photoBio {
+//   height: 15rem;
+//   margin: 20px;
+//   @media (min-width: 1024px) {
+//     height: 70rem;
+//     // margin: 20px;
+//   }
+// }
+// .bio__description {
+//   p {
+//     font-size: 1.4rem;
+//     // line-height: 2em;
+//     text-align: center;
+//     padding-top: 10px;
+//   }
+//   span {
+//     font-size: 1.6rem;
+//     line-height: 2em;
+//     font-weight: bold;
+//   }
+//   @media (min-width: 1024px) {
+//     margin: 20px;
+//     p {
+//       font-size: 2rem;
+//       line-height: 2em;
+//       text-align: left;
+//     }
+//     span {
+//       font-size: 2.5rem;
+//       line-height: 2em;
+//       font-weight: bold;
+//     }
+//   }
+
 // div.bio
 //     position: fixed
 //     top: 0
