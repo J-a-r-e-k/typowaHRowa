@@ -87,12 +87,6 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "bold";
-  src: url("./now/now-medium-webfont.woff2") format("woff2"), url("css/now/now-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 .header {
   display: block;
   width: 100%;
@@ -164,6 +158,11 @@ body {
   .nav__icon {
     display: none;
   }
+}
+
+.nav__icon--active {
+  width: 100vw;
+  height: 100vh;
 }
 
 .nav__elements {
@@ -530,6 +529,18 @@ body {
     font-size: 1.2rem;
   }
 }
+.bio__description .closeSvg {
+  display: block;
+  margin: 0 10px 0 auto;
+  width: 2rem;
+  height: 2rem;
+}
+@media (max-width: 1024px) {
+  .bio__description .closeSvg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+}
 
 .cooperationMe {
   padding: 3%;
@@ -596,7 +607,7 @@ body {
   height: 40vh;
   width: 40vh;
   max-width: 280px;
-  background-image: url("../img/back_circle.png");
+  background-image: url("../img/circle_pink.svg");
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;

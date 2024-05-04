@@ -6,7 +6,7 @@ const navBtn = document.querySelectorAll('.nav__element');
 const navText = document.querySelectorAll('.nav__text');
 const elementBio = document.querySelector('.bio');
 
-const section = document.querySelectorAll('section');
+const section = document.querySelectorAll('.sectionNav');
 
 //Partner//
 const time = 7;
@@ -42,6 +42,7 @@ partnerCompany.forEach((e, index) => {
 
 //Nav Burger//
 const nav = (flag) => {
+  document.querySelector('.nav__icon').classList.toggle('nav__icon--active');
   if (flag && navBoard.style.display == '') {
     navBoard.style.display = 'flex';
     body.style.overflow = 'hidden';
@@ -59,23 +60,17 @@ const scrolled = () => {
     wrapNav.classList.remove('header__wrapNav--scrol');
     navBoard.style.backgroundColor = '#fff';
   }
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
-  //Bold selected text//
-  //   section.forEach((e, index) => {
-  //     navText[index].style.color =
-  //       scrollY + 101 >= e.offsetTop &&
-  //       scrollY <= e.offsetTop + e.offsetHeight - 101
-  //         ? 'red'
-  //         : 'black';
-  //     // navText[index].style.fontWeight =
-  //     //   scrollY + 101 >= e.offsetTop &&
-  //     //   scrollY <= e.offsetTop + e.offsetHeight - 101
-  //     //     ? 'bold'
-  //     //     : 'normal';
-  //   });
-};
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 
+  //Bold selected text//
+  section.forEach((e, index) => {
+    navText[index].style.textShadow =
+      scrollY + 101 >= e.offsetTop &&
+      scrollY <= e.offsetTop + e.offsetHeight - 101
+        ? '1px 0px 0px'
+        : '0px 0px 0px';
+  });
+};
+//Move to items//
 navBtn.forEach((li, index) =>
   li.addEventListener('click', (e) => {
     nav(false);
@@ -100,6 +95,17 @@ document
   .addEventListener('click', () => window.scrollTo(0, 0));
 
 document.querySelector('.btn__description--bio').addEventListener('click', bio);
-document.querySelector('.bio__close').addEventListener('click', bioClose);
+document.querySelector('.closeSvg').addEventListener('click', bioClose);
 navIcon.addEventListener('click', nav);
 window.addEventListener('scroll', scrolled);
+
+// function debounce(method, delay) {
+//   clearTimeout(method._tId);
+//   method._tId= setTimeout(function(){
+//       method();
+//   }, delay);
+// }
+
+// $(window).scroll(function() {
+//   debounce(handleScroll, 100);
+// });

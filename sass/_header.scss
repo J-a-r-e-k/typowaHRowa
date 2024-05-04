@@ -38,6 +38,7 @@
 }
 .logo__icon {
   height: 100%;
+  // width: 100;
 }
 
 .nav__icon {
@@ -51,6 +52,10 @@
   @media (min-width: 1024px) {
     display: none;
   }
+}
+.nav__icon--active {
+  width: 100vw;
+  height: 100vh;
 }
 
 .nav__elements {
