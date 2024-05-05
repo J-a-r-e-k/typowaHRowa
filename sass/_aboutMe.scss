@@ -25,8 +25,9 @@
 }
 
 .work {
-  @media (min-width: 900px) {
-    display: flex;
+  display: flex;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
   }
 }
 .work__myJob {
@@ -147,7 +148,6 @@
   align-items: center;
   justify-content: center;
   background-color: #f8f8f8;
-
   @media (max-width: 1023px) and (orientation: portrait) {
     flex-direction: column-reverse;
   }

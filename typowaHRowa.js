@@ -2,7 +2,6 @@ const body = document.querySelector('body');
 const wrapNav = document.querySelector('.header__wrapNav');
 const navIcon = document.querySelector('.nav__icon');
 const navBoard = document.querySelector('.nav__elements');
-const navBtn = document.querySelectorAll('.nav__element');
 const navText = document.querySelectorAll('.nav__text');
 const elementBio = document.querySelector('.bio');
 
@@ -71,16 +70,16 @@ const scrolled = () => {
   });
 };
 //Move to items//
-navBtn.forEach((li, index) =>
-  li.addEventListener('click', (e) => {
-    nav(false);
-    const topElement = document.querySelector(
-      `#${e.target.textContent.replace(/\s+/g, '')}`
-    ).offsetTop;
-    window.scrollTo(0, innerWidth < 1024 ? topElement : topElement - 100);
-  })
-);
 
+const navBtn = (btn) => {
+  nav(false);
+  const topElement = document.querySelector(
+    `#${btn.target.textContent.replace(/\s+/g, '')}`
+  ).offsetTop;
+  window.scrollTo(0, innerWidth < 1024 ? topElement : topElement - 100);
+};
+
+//NIe dziala na iPhonie overflow//
 const bio = () => {
   elementBio.style.display = 'flex';
   body.style.overflow = 'hidden';
@@ -94,18 +93,8 @@ document
   .querySelector('.header__logo')
   .addEventListener('click', () => window.scrollTo(0, 0));
 
+document.querySelector('.nav__elements').addEventListener('click', navBtn);
 document.querySelector('.btn__description--bio').addEventListener('click', bio);
 document.querySelector('.closeSvg').addEventListener('click', bioClose);
 navIcon.addEventListener('click', nav);
 window.addEventListener('scroll', scrolled);
-
-// function debounce(method, delay) {
-//   clearTimeout(method._tId);
-//   method._tId= setTimeout(function(){
-//       method();
-//   }, delay);
-// }
-
-// $(window).scroll(function() {
-//   debounce(handleScroll, 100);
-// });
