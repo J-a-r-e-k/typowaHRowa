@@ -22,6 +22,12 @@
   cursor: pointer;
 }
 
+@font-face {
+  font-family: "nowregular";
+  src: url("./now/now-regular-webfont.woff2") format("woff2"), url("css/now/now-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   margin: 0 auto;
   max-width: 1400px;
@@ -45,17 +51,41 @@ body {
 }
 
 .nameSection__title {
-  max-width: 60%;
-  font-size: 2.1rem;
   padding: 0 0 0 3%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  max-width: 60%;
+  font-size: 2.1rem;
   text-align: center;
+  text-shadow: 0.5px 0 0;
 }
 
 .nameSection__title--youChange {
   font-size: 1.6rem;
+}
+
+.btn {
+  margin: 10px 10px 10px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 60%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 720px) {
+  .btn {
+    margin-bottom: 50px;
+  }
 }
 
 .btn__icon {
@@ -76,23 +106,12 @@ body {
   text-align: left;
 }
 
-.cos {
-  width: 300px;
-  height: 600px;
-}
-
-@font-face {
-  font-family: "nowregular";
-  src: url("./now/now-regular-webfont.woff2") format("woff2"), url("css/now/now-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 .header {
+  margin: 0 auto;
   display: block;
   width: 100%;
   height: 100vh;
   background-color: #d9d9d9;
-  margin: 0 auto;
 }
 
 .header__wrapNav {
@@ -147,12 +166,9 @@ body {
 
 .nav__icon {
   position: fixed;
-  top: 5vh;
-  left: 5vw;
+  top: 0;
+  left: 0;
   z-index: 1;
-}
-.nav__icon i {
-  font-size: 3rem;
 }
 @media (min-width: 1024px) {
   .nav__icon {
@@ -166,16 +182,8 @@ body {
 }
 
 .nav__elements {
-  display: none;
-  width: 80%;
-  position: fixed;
-  top: 50%;
-  right: 50%;
-  -webkit-transform: translate(50%, -50%);
-      -ms-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
   padding: 0 25px;
-  z-index: 1;
+  display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background-color: #fff;
@@ -186,6 +194,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  width: 80%;
+  z-index: 1;
 }
 @media screen and (max-width: 940px) and (orientation: landscape) {
   .nav__elements {
@@ -199,17 +215,17 @@ body {
 }
 @media (min-width: 1024px) {
   .nav__elements {
+    padding: 0;
+    position: sticky;
+    -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+            transform: translate(0);
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    position: sticky;
-    -webkit-transform: translate(0);
-        -ms-transform: translate(0);
-            transform: translate(0);
-    padding: 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -239,28 +255,20 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 400px;
+  -webkit-transform: translate(-50%, -40%);
+      -ms-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+  width: 30%;
+  max-width: 350px;
 }
-@media screen and (max-width: 940px) {
+@media screen and (orientation: portrait) {
   .header__person {
-    width: 50%;
-  }
-}
-@media screen and (max-width: 940px) and (orientation: landscape) {
-  .header__person {
-    width: 25%;
-  }
-}
-@media screen and (max-width: 520px) {
-  .header__person {
-    width: 70%;
+    width: 60%;
   }
 }
 
 .aboutMe {
+  padding: 3%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -289,7 +297,7 @@ body {
 .me__description {
   padding: 5px 0 5px 0;
   font-size: 1.6rem;
-  padding: 2%;
+  padding: 10px;
 }
 
 .work {
@@ -367,7 +375,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2%;
+  padding: 3%;
 }
 
 .partner__cooperation {
@@ -553,7 +561,7 @@ body {
 }
 
 .taskCooperation {
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
 }
 .taskCooperation li {
   display: -webkit-box;
@@ -569,76 +577,60 @@ body {
   line-height: 2em;
 }
 
-.btn {
-  margin: 10px 10px 10px auto;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  max-width: 60%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.cooperationMe__meProposal {
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  cursor: pointer;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-@media (min-width: 900px) {
-  .btn {
-    margin-bottom: 50px;
-  }
-}
-
-.cooperationMe__meProposal {
-  max-height: 110vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media screen and (orientation: portrait), (max-width: 700px) {
+@media screen and (orientation: portrait) and (max-width: 720px) {
   .cooperationMe__meProposal {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: 110vh;
   }
 }
 
 .cooperationMe__hoopPink {
   margin: 0 auto;
   position: relative;
-  height: 40vh;
-  width: 40vh;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  width: 100%;
   max-width: 280px;
   background-image: url("../img/circle_pink.svg");
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape), (min-width: 720px) {
   .cooperationMe__hoopPink {
-    min-height: 30rem;
     width: 30%;
+    min-height: 30rem;
   }
 }
-.cooperationMe__hoopPink ul {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-.cooperationMe__hoopPink ul li {
-  text-align: center;
-  line-height: 2em;
+
+.cooperationMe__description {
   font-size: 1.8rem;
+  line-height: 2em;
+  text-align: center;
 }
 @media screen and (orientation: landscape) and (max-width: 720px) {
-  .cooperationMe__hoopPink ul li {
+  .cooperationMe__description {
     font-size: 1.5rem;
   }
 }
@@ -649,18 +641,14 @@ body {
 
 .you__wrapChange {
   margin: 0 auto;
-  height: 80vh;
-  max-width: 40rem;
+  width: 100%;
 }
-@media (min-width: 700px) {
+@media (min-width: 720px), (orientation: landscape) {
   .you__wrapChange {
-    max-width: 1000px;
     height: 50vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -668,7 +656,8 @@ body {
 }
 
 .you__change {
-  min-height: 10%;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -677,10 +666,16 @@ body {
           justify-content: center;
   position: relative;
 }
-@media (min-width: 700px) {
+@media (max-width: 720px) {
   .you__change {
-    height: 50%;
-    max-height: 200px;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -690,53 +685,54 @@ body {
 .you__changeIcon {
   position: absolute;
   top: 50%;
-  right: 20%;
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transform-origin: right;
-      -ms-transform-origin: right;
-          transform-origin: right;
-  rotate: 95deg;
-  width: 74px;
+  right: -30px;
+  -webkit-transform: translateY(-235%);
+      -ms-transform: translateY(-235%);
+          transform: translateY(-235%);
+  width: 100px;
 }
-@media (min-width: 700px) {
+@media screen and (orientation: portrait) and (max-width: 720px) {
   .you__changeIcon {
-    width: 80%;
-    top: 0;
-    -webkit-transform: translate(65px, -10px);
-        -ms-transform: translate(65px, -10px);
-            transform: translate(65px, -10px);
-    rotate: 0deg;
-  }
-}
-@media (min-width: 900px) {
-  .you__changeIcon {
-    -webkit-transform: translate(100px, -10px);
-        -ms-transform: translate(100px, -10px);
-            transform: translate(100px, -10px);
+    rotate: 95deg;
+    right: 0;
+    -webkit-transform: translate(0, 80%);
+        -ms-transform: translate(0, 80%);
+            transform: translate(0, 80%);
   }
 }
 
-@media (max-width: 700px) {
+.you__changeIcon--spiral {
+  rotate: 10deg;
+  -webkit-transform: translateY(-220%);
+      -ms-transform: translateY(-220%);
+          transform: translateY(-220%);
+}
+@media screen and (orientation: portrait) and (max-width: 720px) {
   .you__changeIcon--spiral {
-    top: 50%;
-    rotate: 115deg;
-    -webkit-transform: translateX(130%);
-        -ms-transform: translateX(130%);
-            transform: translateX(130%);
+    top: 80%;
+    -webkit-transform: translateY(80%);
+        -ms-transform: translateY(80%);
+            transform: translateY(80%);
+    rotate: 110deg;
   }
 }
 
 .you__changeContent {
-  padding: 5% 0 0 0;
+  padding: 5% 0;
+  min-height: 100px;
 }
 .you__changeContent p {
+  margin: 0 auto;
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 2rem;
+  text-align: center;
+}
+
+.you__changeContent--emphasis p {
+  text-shadow: 1px 0 0;
 }
 
 .recruitment {
@@ -770,7 +766,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 1rem;
+  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -778,7 +774,7 @@ body {
   margin-right: 1rem;
   width: 70px;
 }
-@media (min-width: 900px) {
+@media (min-width: 720px) {
   .talkMe__icon {
     width: 100px;
   }
@@ -789,7 +785,7 @@ body {
 }
 
 .blog {
-  padding: 10%;
+  padding: 3%;
   min-height: 100vh;
 }
 

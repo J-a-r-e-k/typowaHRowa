@@ -3,24 +3,23 @@
 }
 .you__wrapChange {
   margin: 0 auto;
-  height: 80vh;
-  max-width: 40rem;
-  @media (min-width: 700px) {
-    max-width: 1000px;
+  width: 100%;
+
+  @media (min-width: 720px), (orientation: landscape) {
     height: 50vh;
     display: flex;
-    justify-content: space-around;
     align-items: center;
   }
 }
 .you__change {
-  min-height: 10%;
+  flex-basis: 25%;
   display: flex;
   justify-content: center;
   position: relative;
-  @media (min-width: 700px) {
-    height: 50%;
-    max-height: 200px;
+  @media (max-width: 720px) {
+    height: 100%;
+    flex-direction: column;
+    height: fit-content;
     align-items: center;
   }
 }
@@ -28,34 +27,37 @@
 .you__changeIcon {
   position: absolute;
   top: 50%;
-  right: 20%;
-  transform: translateX(100%);
-  transform-origin: right;
-  rotate: 95deg;
-  width: 74px;
-  @media (min-width: 700px) {
-    width: 80%;
-    top: 0;
-    transform: translate(65px, -10px);
-
-    rotate: 0deg;
-  }
-  @media (min-width: 900px) {
-    transform: translate(100px, -10px);
+  right: -30px;
+  transform: translateY(-235%);
+  width: 100px;
+  @media screen and (orientation: portrait) and (max-width: 720px) {
+    rotate: 95deg;
+    right: -0;
+    transform: translate(0, 80%);
   }
 }
 .you__changeIcon--spiral {
-  @media (max-width: 700px) {
-    top: 50%;
-    rotate: 115deg;
-    transform: translateX(130%);
+  rotate: 10deg;
+  transform: translateY(-220%);
+  @media screen and (orientation: portrait) and (max-width: 720px) {
+    top: 80%;
+    transform: translateY(80%);
+    rotate: 110deg;
   }
 }
 .you__changeContent {
-  padding: 5% 0 0 0;
+  padding: 5% 0;
+  min-height: 100px;
   p {
+    margin: 0 auto;
     display: block;
     width: fit-content;
     font-size: 2rem;
+    text-align: center;
+  }
+}
+.you__changeContent--emphasis {
+  p {
+    text-shadow: 1px 0 0;
   }
 }

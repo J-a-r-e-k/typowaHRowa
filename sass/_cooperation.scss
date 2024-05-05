@@ -3,11 +3,10 @@
 }
 
 .taskCooperation {
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   li {
     display: flex;
     align-items: center;
-
     p {
       padding-left: 10px;
       font-size: 1.6rem;
@@ -16,55 +15,40 @@
   }
 }
 
-.btn {
-  margin: 10px 10px 10px auto;
-  width: fit-content;
-  max-width: 60%;
-  height: fit-content;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  @media (min-width: 900px) {
-    margin-bottom: 50px;
-  }
-}
+
 .cooperationMe__meProposal {
-  max-height: 110vh;
+  height: 80vh;
   display: flex;
-  @media screen and (orientation: portrait), (max-width: 700px) {
+  align-items: center;
+  @media screen and (orientation: portrait) and (max-width: 720px) {
     flex-direction: column;
+    height: 110vh;
   }
 }
 
 .cooperationMe__hoopPink {
   margin: 0 auto;
   position: relative;
-  height: 40vh;
-  width: 40vh;
+  flex-basis: 30%;
+  width: 100%;
   max-width: 280px;
   background-image: url('../img/circle_pink.svg');
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
-  @media screen and (orientation: landscape) {
-    min-height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (orientation: landscape), (min-width: 720px) {
     width: 30%;
+    min-height: 30rem;
   }
-
-  ul {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    li {
-      text-align: center;
-      line-height: 2em;
-      font-size: 1.8rem;
-
-      @media screen and (orientation: landscape) and (max-width: 720px) {
-        font-size: 1.5rem;
-      }
-    }
+}
+.cooperationMe__description {
+  font-size: 1.8rem;
+  line-height: 2em;
+  text-align: center;
+  @media screen and (orientation: landscape) and (max-width: 720px) {
+    font-size: 1.5rem;
   }
 }

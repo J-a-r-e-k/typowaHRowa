@@ -79,7 +79,7 @@ const navBtn = (btn) => {
   window.scrollTo(0, innerWidth < 1024 ? topElement : topElement - 100);
 };
 
-//NIe dziala na iPhonie overflow//
+//Nie dziala na iPhonie overflow//
 const bio = () => {
   elementBio.style.display = 'flex';
   body.style.overflow = 'hidden';

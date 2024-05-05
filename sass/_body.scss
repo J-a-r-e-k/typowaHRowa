@@ -21,6 +21,15 @@
     cursor: pointer;
   }
 }
+
+@font-face {
+  font-family: 'nowregular';
+  src: url('./now/now-regular-webfont.woff2') format('woff2'),
+    url('css/now/now-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0 auto;
   max-width: 1400px;
@@ -36,16 +45,28 @@ body {
 }
 
 .nameSection__title {
-  max-width: 60%;
-  font-size: 2.1rem;
   padding: 0 0 0 3%;
   width: fit-content;
+  max-width: 60%;
+  font-size: 2.1rem;
   text-align: center;
+  text-shadow: 0.5px 0 0;
 }
 .nameSection__title--youChange {
   font-size: 1.6rem;
 }
-
+.btn {
+  margin: 10px 10px 10px auto;
+  width: fit-content;
+  max-width: 60%;
+  height: fit-content;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  @media (min-width: 720px) {
+    margin-bottom: 50px;
+  }
+}
 .btn__icon {
   width: 60px;
 }
@@ -59,23 +80,3 @@ body {
   font-size: 1.7rem;
   text-align: left;
 }
-
-.cos {
-  width: 300px;
-  height: 600px;
-}
-
-@font-face {
-  font-family: 'nowregular';
-  src: url('./now/now-regular-webfont.woff2') format('woff2'),
-    url('css/now/now-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-// @font-face {
-//   font-family: 'bolder';
-//   src: url('./now/now-bold-webfont.woff2') format('woff2'),
-//     url('./now/now-bold-webfont.woff') format('woff');
-//   font-weight: bolder;
-//   font-style: normal;
-// }

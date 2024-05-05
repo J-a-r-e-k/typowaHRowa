@@ -24,7 +24,9 @@
         </button>
         <nav class="nav">
           <div class="nav__icon">
-            <i class="fa-solid fa-bars"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  transform="translate(10, 10)" width="50px" height="50px" viewBox="0 0 24 24">
+                <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+                </svg>
           </div>
           <ul class="nav__elements">
             <li class="nav__element"><button class="nav__text" >poznajMY się</button></li>
@@ -54,6 +56,7 @@
     </header>
     <main>
       <section id="poznajMYsię" class="aboutMe sectionNav ">
+        <div>
         <div class="me">
           <h1 class="me__name">Agata Sieniawska</h1>
           <p class="me__description">
@@ -112,6 +115,7 @@
           <img class="btn__icon" src="img/arrow_pink.svg" alt="" />
           <a class="btn__description btn__description--bio" >moje BIO</a>
         </button>
+      </div>
         <div class="bio">
           <img class="photoBio" src="img/TypowaHRowa.png" alt="Serdecznie uśmiechająca sie Agata" />
           <section class="bio__description">
@@ -318,23 +322,23 @@
         <div class="cooperationMe__meProposal">
           <div class="cooperationMe__hoopPink">
             <ul>
-              <li>Head of HR</li>
-              <li>HR Manager</li>
-              <li>P&C Partner</li>
-              <li>HR Business Partner</li>
-              <li>Rekruter</li>
+              <li class="cooperationMe__description">Head of HR</li>
+              <li class="cooperationMe__description">HR Manager</li>
+              <li class="cooperationMe__description">P&C Partner</li>
+              <li class="cooperationMe__description">HR Business Partner</li>
+              <li class="cooperationMe__description">Rekruter</li>
             </ul>
           </div>
           <div class="cooperationMe__hoopPink">
             <ul>
-              <li>Wykładowca</li>
-              <li>Prelegent</li>
+              <li class="cooperationMe__description">Wykładowca</li>
+              <li class="cooperationMe__description">Prelegent</li>
             </ul>
           </div>
           <div class="cooperationMe__hoopPink">
             <ul>
-              <li>Trener biznesu</li>
-              <li>Coach rozowju</li>
+              <li class="cooperationMe__description">Trener biznesu</li>
+              <li class="cooperationMe__description">Coach rozowju</li>
             </ul>
           </div>
         </div>
@@ -386,7 +390,7 @@
             </div>
           </div>
           <div class="you__change">
-            <div class="you__changeContent">
+            <div class="you__changeContent you__changeContent--emphasis">
               <p>Twoje nowe</p>
               <p>zawodowe</p>
               <p>życie</p>
@@ -414,6 +418,7 @@
         <div class="talkMe__wrap">
           <a class="talkMe__contactElement" href="mailto:" >
             <img class="talkMe__icon" src="img/post.svg" alt="Email icon" />
+
             <p class="talkMe__adres" >typowahr@gmail.com</p>
           </a>
           <a class="talkMe__contactElement"  href="https://www.instagram.com/typowa_hrowa/?next=%2Fp%2FCmrTYhCosn2%2F&hl=fr" target="_blank">
@@ -1025,6 +1030,3 @@
 </html>
 
 
-<!-- 
-dodać Overflow na BIO!!
--->

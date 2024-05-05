@@ -1,6 +1,5 @@
 .blog {
-  padding: 10%;
-
+  padding: 3%;
   min-height: 100vh;
 }
 
@@ -8,7 +7,6 @@
   height: fit-content;
   display: flex;
   justify-content: center;
-
   flex-wrap: wrap;
   @media (min-width: 920px) {
     margin-top: 30px;

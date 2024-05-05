@@ -12,14 +12,14 @@
 .talkMe__contactElement {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 10px;
   cursor: pointer;
 }
 
 .talkMe__icon {
   margin-right: 1rem;
   width: 70px;
-  @media (min-width: 900px) {
+  @media (min-width: 720px) {
     width: 100px;
   }
 }

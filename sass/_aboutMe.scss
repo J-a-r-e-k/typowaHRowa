@@ -1,4 +1,5 @@
 .aboutMe {
+  padding: 3%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,7 +22,7 @@
 .me__description {
   padding: 5px 0 5px 0;
   font-size: 1.6rem;
-  padding: 2%;
+  padding: 10px;
 }
 
 .work {
@@ -73,7 +74,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2%;
+  padding: 3%;
 }
 .partner__cooperation {
   display: flex;
@@ -195,8 +196,6 @@
       width: 1.4rem;
       height: 1.4rem;
     }
-
-    // fill: #d90303;
   }
 }
 //* END POPAP MOJE BIO
