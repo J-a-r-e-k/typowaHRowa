@@ -81,6 +81,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-shadow: 0.7px 0 0;
 }
 @media (min-width: 720px) {
   .btn {
@@ -304,9 +305,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 720px) {
   .work {
+    padding: 10px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -315,51 +319,57 @@ body {
 }
 
 .work__myJob {
-  margin: 1rem auto 0;
-  padding: 0 5%;
-  width: 70%;
-}
-@media (orientation: landscape), (min-width: 720px) {
-  .work__myJob {
-    width: 60%;
-  }
-}
-
-.work__wrapName {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+@media screen and (max-width: 720px) {
+  .work__myJob {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (orientation: landscape) and (max-width: 1024px) {
+  .work__myJob {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
 }
 
 .work__icon {
-  margin-right: 10px;
+  margin: 20px;
   width: 50px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
 .work__subtitle {
-  line-height: 2em;
+  -ms-flex-item-align: center;
+      align-self: center;
   font-size: 2.2rem;
+  line-height: 2em;
+  text-shadow: 0.5px 0 0;
+}
+@media screen and (max-width: 720px) {
+  .work__subtitle {
+    width: 40%;
+  }
 }
 
 .work__collection {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 }
 
 .work__description {
+  margin: 0 auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0 0 15px 60px;
-  font-size: 1.7rem;
-  white-space: nowrap;
-}
-
-.work__description--mission {
   font-size: 1.7rem;
   line-height: 2em;
 }
