@@ -772,7 +772,7 @@ body {
 }
 @media (max-width: 720px) and (orientation: landscape) {
   .talkMe {
-    min-height: 320px;
+    min-height: 500px;
   }
 }
 
