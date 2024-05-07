@@ -2,7 +2,7 @@
   position: relative;
   padding: 3%;
   min-height: 60vh;
-  @media (max-width: 720px), (orientation: landscape) {
+  @media (max-width: 720px) and (orientation: landscape) {
     min-height: 320px;
   }
 }
