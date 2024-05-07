@@ -42,10 +42,11 @@ body {
 }
 .nameSection__icon {
   height: 50px;
+  padding-right: 10px;
 }
 
 .nameSection__title {
-  padding: 0 0 0 3%;
+  // padding: 0 0 0 3%;
   width: fit-content;
   max-width: 60%;
   font-size: 2.1rem;
@@ -77,7 +78,7 @@ body {
   rotate: -45deg;
 }
 .btn__description {
-  padding-left: 10px;
+  padding: 10px 0 10px 10px;
   font-size: 1.7rem;
   text-align: left;
 }

@@ -2,6 +2,9 @@
   position: relative;
   padding: 3%;
   min-height: 60vh;
+  @media (max-width: 720px), (orientation: landscape) {
+    min-height: 320px;
+  }
 }
 .talkMe__wrap {
   position: absolute;

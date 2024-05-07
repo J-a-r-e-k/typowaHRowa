@@ -28,7 +28,7 @@
 .work {
   display: flex;
   justify-content: space-around;
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 940px) {
     padding: 10px;
     flex-direction: column;
   }
@@ -38,7 +38,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 940px) {
     justify-content: center;
   }
 
@@ -59,6 +59,7 @@
   text-shadow: 0.5px 0 0;
   @media screen and (max-width: 720px) {
     width: 40%;
+    min-width: fit-content;
   }
 }
 
@@ -82,7 +83,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 100%;
   margin-top: 1rem;
   @media (min-width: 900px) {
     flex-direction: row;
@@ -117,7 +118,7 @@
 
 .partner__Company {
   position: relative;
-  width: 100%;
+  width: fit-content;
   border-radius: 20px;
   padding: 0 20px;
   background-color: #ff00c999;
@@ -145,6 +146,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+
+  // min-height: 500px;
+  // overflow: scroll;
   z-index: 1;
   display: none;
   align-items: center;
@@ -166,10 +170,10 @@
   margin: 20px;
   flex-shrink: 1;
   max-height: 70%;
-  overflow: scroll;
+  overflow: auto;
   @media (orientation: landscape) {
     max-width: 60%;
-    max-height: fit-content;
+    max-height: 85%;
   }
   p {
     font-size: 1.6rem;

@@ -7,6 +7,7 @@
 
   @media (min-width: 720px), (orientation: landscape) {
     height: 50vh;
+    min-height: 320px;
     display: flex;
     align-items: center;
   }
@@ -33,7 +34,7 @@
   @media screen and (orientation: portrait) and (max-width: 720px) {
     rotate: 95deg;
     right: -0;
-    transform: translate(0, 80%);
+    transform: translate(0, 70%);
   }
 }
 .you__changeIcon--spiral {
@@ -41,8 +42,8 @@
   transform: translateY(-220%);
   @media screen and (orientation: portrait) and (max-width: 720px) {
     top: 80%;
-    transform: translateY(80%);
-    rotate: 110deg;
+    transform: translateY(65%);
+    rotate: 100deg;
   }
 }
 .you__changeContent {
