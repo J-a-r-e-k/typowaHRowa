@@ -374,9 +374,15 @@ body {
 .work__collection {
   width: 100%;
 }
+@media screen and (min-width: 940px) {
+  .work__collection {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
 
 .work__description {
-  margin: 0 auto;
+  margin: 0 auto 0 5px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
