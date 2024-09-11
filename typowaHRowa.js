@@ -34,7 +34,7 @@ const showPartner = (e) => {
   };
   setInterval(show, time * 1000);
 };
-//Petla uruchamiająca interwał na każdym elemecie
+//Petla uruchamiająca interwał na każdym elemencie
 partnerCompany.forEach((e, index) => {
   showPartner(index);
 });
@@ -52,6 +52,7 @@ const nav = (flag) => {
 };
 //Menu color depends on scroll//
 const scrolled = () => {
+  console.log('ok');
   if (document.querySelector('.header').offsetHeight <= scrollY + 101) {
     wrapNav.classList.add('header__wrapNav--scrol');
     navBoard.style.backgroundColor = '#d9d9d9';
@@ -68,9 +69,23 @@ const scrolled = () => {
         ? '1px 0px 0px'
         : '0px 0px 0px';
   });
+
+  const sections = document.querySelectorAll('section');
+  const scrollPosition = window.scrollY;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+    if (
+      scrollPosition >= sectionTop - 101 &&
+      scrollPosition < sectionTop - 101 + sectionHeight
+    ) {
+      history.pushState(null, null, `/${sectionId}`);
+    }
+  });
 };
 //Move to items//
-
 const navBtn = (btn) => {
   nav(false);
   const topElement = document.querySelector(
@@ -79,7 +94,7 @@ const navBtn = (btn) => {
   window.scrollTo(0, innerWidth < 1024 ? topElement : topElement - 100);
 };
 
-//Nie dziala na iPhonie overflow//
+//Nie działa na iPhonie overflow//
 const bio = () => {
   elementBio.style.display = 'flex';
   body.style.overflow = 'hidden';
@@ -89,6 +104,14 @@ const bioClose = () => {
   body.style.overflow = 'scroll';
 };
 
+let debounceTimeout;
+function debounce(func, delay) {
+  return function (...args) {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
 document
   .querySelector('.header__logo')
   .addEventListener('click', () => window.scrollTo(0, 0));
@@ -97,4 +120,4 @@ document.querySelector('.nav__elements').addEventListener('click', navBtn);
 document.querySelector('.btn__description--bio').addEventListener('click', bio);
 document.querySelector('.closeSvg').addEventListener('click', bioClose);
 navIcon.addEventListener('click', nav);
-window.addEventListener('scroll', scrolled);
+window.addEventListener('scroll', debounce(scrolled, 200));
