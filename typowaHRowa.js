@@ -4,7 +4,6 @@ const navIcon = document.querySelector('.nav__icon');
 const navBoard = document.querySelector('.nav__elements');
 const navText = document.querySelectorAll('.nav__text');
 const elementBio = document.querySelector('.bio');
-
 const section = document.querySelectorAll('.sectionNav');
 
 //Partner//
@@ -39,6 +38,19 @@ partnerCompany.forEach((e, index) => {
   showPartner(index);
 });
 
+const startPosition = () => {
+  const hash = window.location.hash.replace('#/', '');
+
+  if (hash) {
+    const topElement = document.querySelector(`#${hash}`).offsetTop;
+    console.log(topElement);
+    window.scrollTo({
+      top: innerWidth < 1024 ? topElement : topElement - 100,
+      // behavior: 'smooth', // Płynne przewijanie
+    });
+  }
+};
+
 //Nav Burger//
 const nav = (flag) => {
   document.querySelector('.nav__icon').classList.toggle('nav__icon--active');
@@ -52,7 +64,7 @@ const nav = (flag) => {
 };
 //Menu color depends on scroll//
 const scrolled = () => {
-  console.log('ok');
+  // console.log('ok');
   if (document.querySelector('.header').offsetHeight <= scrollY + 101) {
     wrapNav.classList.add('header__wrapNav--scrol');
     navBoard.style.backgroundColor = '#d9d9d9';
@@ -81,20 +93,23 @@ const scrolled = () => {
       scrollPosition >= sectionTop - 101 &&
       scrollPosition < sectionTop - 101 + sectionHeight
     ) {
-      history.pushState(null, null, `/${sectionId}`);
+      history.pushState(null, null, `#/${sectionId}`);
     }
   });
 };
 //Move to items//
 const navBtn = (btn) => {
   nav(false);
-  const topElement = document.querySelector(
-    `#${btn.target.textContent.replace(/\s+/g, '')}`
-  ).offsetTop;
-  window.scrollTo(0, innerWidth < 1024 ? topElement : topElement - 100);
+  setTimeout(() => {
+    const topElement = document.querySelector(`#${btn.target.name}`).offsetTop;
+    console.log(topElement);
+    window.scrollTo({
+      top: innerWidth < 1024 ? topElement : topElement - 100,
+      behavior: 'smooth', // Płynne przewijanie
+    });
+  }, 50);
 };
 
-//Nie działa na iPhonie overflow//
 const bio = () => {
   elementBio.style.display = 'flex';
   body.style.overflow = 'hidden';
@@ -116,8 +131,9 @@ document
   .querySelector('.header__logo')
   .addEventListener('click', () => window.scrollTo(0, 0));
 
-document.querySelector('.nav__elements').addEventListener('click', navBtn);
 document.querySelector('.btn__description--bio').addEventListener('click', bio);
 document.querySelector('.closeSvg').addEventListener('click', bioClose);
 navIcon.addEventListener('click', nav);
 window.addEventListener('scroll', debounce(scrolled, 200));
+document.querySelector('.nav__elements').addEventListener('click', navBtn);
+document.addEventListener('DOMContentLoaded', startPosition);
