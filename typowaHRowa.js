@@ -4,7 +4,14 @@ const navIcon = document.querySelector('.nav__icon');
 const navBoard = document.querySelector('.nav__elements');
 const navText = document.querySelectorAll('.nav__text');
 const elementBio = document.querySelector('.bio');
+const elementOffer = document.querySelector('.offer');
 const section = document.querySelectorAll('.sectionNav');
+
+const container = document.querySelector('.carousel-container');
+const track = container.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = container.querySelector('.next');
+const prevButton = container.querySelector('.prev');
 
 //Partner//
 const time = 7;
@@ -43,7 +50,6 @@ const startPosition = () => {
 
   if (hash) {
     const topElement = document.querySelector(`#${hash}`).offsetTop;
-    console.log(topElement);
     window.scrollTo({
       top: innerWidth < 1024 ? topElement : topElement - 100,
       // behavior: 'smooth', // Płynne przewijanie
@@ -114,8 +120,15 @@ const bio = () => {
   elementBio.style.display = 'flex';
   body.style.overflow = 'hidden';
 };
-const bioClose = () => {
+
+const offer = () => {
+  elementOffer.style.display = 'flex';
+  body.style.overflow = 'hidden';
+};
+
+const close = () => {
   elementBio.style.display = 'none';
+  elementOffer.style.display = 'none';
   body.style.overflow = 'scroll';
 };
 
@@ -126,13 +139,121 @@ function debounce(func, delay) {
     debounceTimeout = setTimeout(() => func.apply(this, args), delay);
   };
 }
+//////////////////////
+const Carousel = () => {
+  // Stan wewnętrzny
+  let isDragging = false;
+  let startPos = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let animationID = 0;
+  let currentIndex = 0;
 
+  const getPositionX = (event) => {
+    return event.type.includes('mouse')
+      ? event.pageX
+      : event.touches[0].clientX;
+  };
+
+  const setSlidePosition = () => {
+    track.style.transform = `translateX(${currentTranslate}px)`;
+  };
+
+  const animation = () => {
+    setSlidePosition();
+    if (isDragging) {
+      animationID = requestAnimationFrame(animation);
+    }
+  };
+
+  const slide = (direction) => {
+    const slideWidth = slides[0].offsetWidth;
+    const maxIndex = slides.length - 1;
+
+    currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + direction));
+    currentTranslate = prevTranslate = -currentIndex * slideWidth;
+
+    track.style.transition = 'transform 0.3s ease-out';
+    setSlidePosition();
+
+    setTimeout(() => {
+      track.style.transition = 'none';
+    }, 300);
+  };
+
+  // Handlery eventów
+  const touchStart = (event) => {
+    isDragging = true;
+    startPos = getPositionX(event);
+    animationID = requestAnimationFrame(animation);
+    track.style.cursor = 'grabbing';
+  };
+
+  const touchMove = (event) => {
+    if (!isDragging) return;
+
+    const currentPosition = getPositionX(event);
+    const diff = currentPosition - startPos;
+    currentTranslate = prevTranslate + diff;
+  };
+
+  const touchEnd = () => {
+    isDragging = false;
+    cancelAnimationFrame(animationID);
+    track.style.cursor = 'grab';
+
+    const movedBy = currentTranslate - prevTranslate;
+
+    if (Math.abs(movedBy) > 100) {
+      if (movedBy < 0) {
+        slide(1);
+      } else {
+        slide(-1);
+      }
+    } else {
+      slide(0);
+    }
+  };
+
+  // Inicjalizacja event listenerów
+  nextButton.addEventListener('click', () => slide(1));
+  prevButton.addEventListener('click', () => slide(-1));
+
+  // Touch events
+  track.addEventListener('touchstart', touchStart);
+  track.addEventListener('touchmove', touchMove);
+  track.addEventListener('touchend', touchEnd);
+
+  // Mouse events
+  track.addEventListener('mousedown', touchStart);
+  track.addEventListener('mousemove', touchMove);
+  track.addEventListener('mouseup', touchEnd);
+  track.addEventListener('mouseleave', touchEnd);
+
+  // Prevent dragging
+  track.addEventListener('dragstart', (e) => e.preventDefault());
+
+  // return {
+  // next: () => slide(1),
+  // prev: () => slide(-1),
+  // goToSlide: (index) => slide(index - currentIndex),
+  // };
+};
+Carousel();
+
+///////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 document
   .querySelector('.header__logo')
   .addEventListener('click', () => window.scrollTo(0, 0));
 
 document.querySelector('.btn__description--bio').addEventListener('click', bio);
-document.querySelector('.closeSvg').addEventListener('click', bioClose);
+document
+  .querySelector('.btn__description--offer')
+  .addEventListener('click', offer);
+document
+  .querySelectorAll('.closeSvg')
+  .forEach((e) => e.addEventListener('click', close));
+
 navIcon.addEventListener('click', nav);
 window.addEventListener('scroll', debounce(scrolled, 200));
 document.querySelector('.nav__elements').addEventListener('click', navBtn);

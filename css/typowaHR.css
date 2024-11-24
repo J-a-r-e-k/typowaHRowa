@@ -762,6 +762,287 @@ body {
   text-shadow: 1px 0 0;
 }
 
+.wrap__offer {
+  width: 80%;
+  height: 80%;
+  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 0 5px 0px #ddd;
+          box-shadow: 0 0 5px 0px #ddd;
+  border-radius: 5px;
+  position: relative;
+}
+
+.wrap__offer--center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrap__offer--support {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offer_title {
+  font-size: 4rem;
+  line-height: 2em;
+  text-shadow: 0 0px 1px;
+}
+
+.offer_title--list {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 2.6rem;
+}
+
+.offer_description {
+  width: 90%;
+  font-size: 3rem;
+  line-height: 2em;
+  text-align: center;
+}
+
+.offer__icon {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 80px;
+}
+
+.offer__clickMe {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 100px;
+  text-align: center;
+  background-image: url("../img/clickMe.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 170px;
+}
+.offer__clickMe a {
+  font-size: 3rem;
+  color: #f856a6;
+  font-weight: bold;
+}
+
+.offer__icon--start {
+  position: unset;
+  width: 200px;
+}
+
+.offer__icon--question {
+  height: 200px;
+  margin-left: 20px;
+}
+
+.offer__nameBenefits {
+  font-size: 2rem;
+  text-shadow: 0 0 0.1px;
+  width: 90%;
+  margin: 5px auto;
+}
+
+.offer__aboutMy {
+  background-image: url("../img/list.svg");
+  margin: 0 auto;
+  width: 50%;
+  height: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.offer__aboutMy div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  padding: 5px;
+}
+.offer__aboutMy div a {
+  margin-left: 10px;
+  font-size: 1.6rem;
+}
+
+.offer__wrapList {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.offer__wrapList--line li {
+  list-style: none;
+}
+.offer__wrapList--line li ::before {
+  content: "-";
+  padding-right: 8px;
+}
+
+.offer__text {
+  font-size: 1.6rem;
+}
+
+.offer__list {
+  margin-top: 10px;
+  list-style: disc;
+  font-size: 1.6rem;
+}
+
+.offer__list--benefits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5px;
+}
+
+.offer__text--cooperation {
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+.offer__text--cooperation span {
+  font-size: 1.6rem;
+  text-shadow: 0 0 0.3px;
+}
+
+.offer__arrow {
+  margin-right: 20px;
+  width: 50px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.arrow__cooperation {
+  width: 90px;
+  margin-left: 5px;
+}
+
+.offer__textStar {
+  font-size: 1.2rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.carousel-slide {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carousel-button {
+  position: absolute;
+  bottom: 20%;
+  width: 70px;
+  height: 45px;
+  z-index: 10;
+  cursor: pointer;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: linear 0.1s;
+  transition: linear 0.1s;
+}
+@media screen and (max-width: 720px) {
+  .carousel-button {
+    opacity: 0;
+  }
+}
+
+.carousel-button:hover {
+  width: 80px;
+  height: 50px;
+}
+
+.carousel-button.prev {
+  left: 10px;
+  background-image: url("../img/1.svg");
+}
+
+.carousel-button.next {
+  right: 10px;
+  background-image: url("../img/1.svg");
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.close-offer {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  cursor: pointer;
+  z-index: 11;
+}
+@media screen and (max-width: 1024px) {
+  .close-offer {
+    right: 5px;
+  }
+}
+
 .recruitment {
   padding: 3%;
 }
