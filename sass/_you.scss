@@ -431,7 +431,7 @@
 
   @media screen and (max-width: 720px) {
 
-    bottom: 0;
+    bottom: 40px;
     height: 100vh;
     // background-color: transparent;
 
@@ -497,7 +497,6 @@
 
   @media (max-width:720px) {
     gap: 5px;
-    bottom: 50px;
 
   }
 }
