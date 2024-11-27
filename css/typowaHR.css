@@ -847,6 +847,8 @@ body {
             justify-content: start;
     -ms-touch-action: double-tap-zoom;
         touch-action: double-tap-zoom;
+    -ms-touch-action: pan-x;
+        touch-action: pan-x;
   }
 }
 @media (orientation: landscape) and (max-width: 720px) {
