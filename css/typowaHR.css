@@ -848,10 +848,6 @@ body {
     -ms-touch-action: double-tap-zoom;
         touch-action: double-tap-zoom;
   }
-  .wrap__offer > * {
-    -ms-touch-action: pan-x;
-        touch-action: pan-x;
-  }
 }
 @media (orientation: landscape) and (max-width: 720px) {
   .wrap__offer {
@@ -1189,6 +1185,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-touch-action: pan-x;
+      touch-action: pan-x;
 }
 
 .carousel-button {

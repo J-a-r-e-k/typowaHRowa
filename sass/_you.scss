@@ -98,9 +98,7 @@
     justify-content: start;
     touch-action: double-tap-zoom;
 
-    >* {
-      touch-action: pan-x;
-    }
+
 
   }
 
@@ -416,6 +414,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: pan-x;
 
   // user-select: none;
   // @media (max-width: 720px) {
