@@ -60,11 +60,15 @@ const startPosition = () => {
 //Nav Burger//
 const nav = (flag) => {
   document.querySelector('.nav__icon').classList.toggle('nav__icon--active');
-  if (flag && navBoard.style.display == '') {
-    navBoard.style.display = 'flex';
+  if (flag && navBoard.style.right == '') {
+    console.log('okkk')
+    // navBoard.style.display = 'flex';
+    navBoard.style.right = '50%';
     body.style.overflow = 'hidden';
   } else {
-    navBoard.style.display = '';
+    console.log('xxxx')
+    // navBoard.style.display = '';
+    navBoard.style.right = '';
     body.style.overflow = 'scroll';
   }
 };
@@ -83,7 +87,7 @@ const scrolled = () => {
   section.forEach((e, index) => {
     navText[index].style.textShadow =
       scrollY + 101 >= e.offsetTop &&
-      scrollY <= e.offsetTop + e.offsetHeight - 101
+        scrollY <= e.offsetTop + e.offsetHeight - 101
         ? '1px 0px 0px'
         : '0px 0px 0px';
   });

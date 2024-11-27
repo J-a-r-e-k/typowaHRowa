@@ -15,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (min-width: 1024px) {
     position: fixed;
     z-index: 1;
@@ -22,6 +23,7 @@
     background-color: #fff;
   }
 }
+
 .header__wrapNav--scrol {
   background-color: #d9d9d9;
 }
@@ -32,45 +34,105 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
+
   @media (min-width: 1024px) {
     padding: 10px;
   }
 }
+
 .logo__icon {
   height: 100%;
 }
 
+
+.meet__icon {
+  width: fit-content;
+  position: relative;
+
+
+}
+
+@media screen and (min-width: 720px) {
+  .meet__icon:hover {
+    svg {
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  .meet__icon::after {
+    content: 'Umów spotkanie!';
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 110%;
+    font-size: 1.2rem;
+    width: 0px;
+    overflow: hidden;
+    transition: all .5s ease;
+    font-size: 1.4rem;
+    text-shadow: 0 0 .1px #ccc;
+  }
+
+  .meet__icon:hover::after {
+    width: 120px;
+  }
+}
+
 .nav__icon {
   position: fixed;
-  top: 0;
-  left: 0;
+  bottom: 50px;
+  left: -18px;
   z-index: 1;
+  border-radius: 30px;
+
   @media (min-width: 1024px) {
     display: none;
   }
+
+  @media (orientation: landscape) {
+    bottom: 50%;
+    transform: translateY(50%);
+
+  }
+
 }
+
 .nav__icon--active {
   width: 100vw;
   height: 100vh;
+  bottom: 0;
+  left: 0;
+  transform: translateY(0%);
+
+  svg {
+    display: none;
+  }
 }
 
 .nav__elements {
   padding: 0 25px;
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   background-color: #fff;
   justify-content: center;
   flex-direction: column;
   position: fixed;
   top: 50%;
-  right: 50%;
+  right: 150%;
   transform: translate(50%, -50%);
   width: 80%;
+  border-radius: 10px;
   z-index: 1;
+  transition: all 0.3s ease;
+
+
   @media screen and (max-width: 940px) and (orientation: landscape) {
     justify-content: space-around;
     flex-direction: row;
   }
+
   @media (min-width: 1024px) {
     padding: 0;
     position: sticky;
@@ -87,10 +149,12 @@
   text-align: center;
   cursor: pointer;
   border-bottom: 2px solid black;
+
   @media (min-width: 1024px) {
     border: none;
   }
 }
+
 .nav__text {
   font-size: 1.8rem;
   line-height: 2em;
@@ -109,6 +173,7 @@
   @media screen and (orientation: portrait) {
     width: 60%;
   }
+
   @media screen and (max-width: 940px) and (orientation: landscape) {
     max-width: 200px;
   }

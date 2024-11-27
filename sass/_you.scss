@@ -74,9 +74,9 @@
 }
 
 //OFFER//
-// .offer {
-//   display: flex;
-// }
+.offer {
+  // display: flex;
+}
 
 .wrap__offer {
   width: 80%;
@@ -88,6 +88,20 @@
   box-shadow: 0 0 5px 0px #ddd;
   border-radius: 5px;
   position: relative;
+
+  @media (max-width: 720px) {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 80px;
+    justify-content: start;
+
+  }
+
+  @media (orientation: landscape) and (max-width: 720px) {
+
+    overflow-y: auto;
+  }
+
 }
 
 .wrap__offer--center {
@@ -97,12 +111,28 @@
 .wrap__offer--support {
   flex-direction: row;
   align-items: center;
+
+
+  @media (max-width: 720px) {
+    >h2 {
+      flex: 1;
+    }
+  }
 }
+
+
+
+
 
 .offer_title {
   font-size: 4rem;
   line-height: 2em;
   text-shadow: 0 0px 1px;
+  text-align: center;
+
+  @media (max-width: 720px) {
+    font-size: 2.2rem;
+  }
 }
 
 .offer_title--list {
@@ -110,6 +140,12 @@
   top: 10%;
   left: 5%;
   font-size: 2.6rem;
+
+  @media (max-width: 720px) {
+    position: unset;
+    font-size: 1.8rem;
+    // width: 85%;
+  }
 }
 
 .offer_description {
@@ -117,6 +153,10 @@
   font-size: 3rem;
   line-height: 2em;
   text-align: center;
+
+  @media (max-width: 720px) {
+    font-size: 1.8rem;
+  }
 }
 
 .offer__icon {
@@ -124,6 +164,14 @@
   right: 20px;
   bottom: 20px;
   width: 80px;
+
+  @media (max-width: 720px) {
+    position: unset;
+    margin: 10px 0 0 auto;
+
+  }
+
+
 }
 
 .offer__clickMe {
@@ -131,21 +179,31 @@
   bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
-
-
   height: 100px;
-
+  width: 450px;
   text-align: center;
   background-image: url('../img/clickMe.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 30px 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
   a {
     font-size: 3rem;
     color: #f856a6;
     font-weight: bold;
+
+  }
+
+  @media screen and (max-width:720px) {
+    height: 80px;
+    width: 100%;
+    bottom: 40%;
+
+
+
   }
 
 }
@@ -153,11 +211,28 @@
 .offer__icon--start {
   position: unset;
   width: 200px;
+
+  @media (max-width: 720px) {
+    width: 150px;
+    margin: 20px auto;
+  }
 }
 
 .offer__icon--question {
   height: 200px;
   margin-left: 20px;
+
+  @media (max-width: 720px) {
+    height: 100px;
+  }
+}
+
+.offer__logoQuestion {
+  @media (max-width: 720px) {
+    position: absolute;
+    bottom: 80px;
+
+  }
 }
 
 .offer__nameBenefits {
@@ -189,14 +264,31 @@
     a {
       margin-left: 10px;
       font-size: 1.6rem;
+    }
+  }
 
+  @media (max-width: 720px) or (orientation: portrait) {
+    margin-top: 20%;
+    width: 100%;
+    height: 80vw;
+
+
+    div {
+      width: 80%;
     }
   }
 }
 
 .offer__wrapList {
   margin: 0 auto;
-  width: 80%;
+  // width: 80%;
+
+  @media (max-width: 720px) {
+    flex-grow: 1;
+    // display: flex;
+    // align-items: center;
+    // height: 70%;
+  }
 }
 
 .offer__wrapList--line {
@@ -212,12 +304,17 @@
 
 .offer__text {
   font-size: 1.6rem;
+
+  @media (max-width: 720px) {
+    font-size: 1.4rem;
+  }
 }
 
 
 .offer__list {
-
-  margin-top: 10px;
+  margin: 10px auto;
+  width: 80%;
+  // margin-top: 10px;
   list-style: disc;
   font-size: 1.6rem;
   // line-height: 1.5em;
@@ -228,6 +325,17 @@
 .offer__list--benefits {
   display: flex;
   margin-top: 5px;
+  position: relative;
+}
+
+.offer__list--center {
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+
 }
 
 .offer__text--cooperation {
@@ -239,6 +347,15 @@
     text-shadow: 0 0 .3px;
 
   }
+
+  @media (max-width: 720px) {
+    font-size: 1.2rem;
+
+    span {
+      font-size: 1.4rem;
+
+    }
+  }
 }
 
 .offer__arrow {
@@ -246,11 +363,25 @@
   width: 50px;
   height: fit-content;
   transform: translateY(5px);
+
+  @media (max-width: 720px) {
+    width: 30px;
+  }
 }
 
 .arrow__cooperation {
   width: 90px;
   margin-left: 5px;
+
+  @media (max-width: 720px) {
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    width: 50px;
+    // margin: auto 0 0 0;
+    // height: fit-content;
+
+  }
 }
 
 .offer__textStar {
@@ -278,7 +409,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   // user-select: none;
+  // @media (max-width: 720px) {
+  //   margin-top: 10px;
+  //   align-items: start;
+  // }
 }
 
 .carousel-button {
@@ -294,24 +430,48 @@
   transition: linear 0.1s;
 
   @media screen and (max-width: 720px) {
-    opacity: 0;
+
+    bottom: 0;
+    height: 100vh;
+    // background-color: transparent;
+
+
   }
 }
 
+
 .carousel-button:hover {
-  width: 80px;
-  height: 50px;
+  @media screen and (min-width: 720px) {
+    width: 80px;
+    height: 50px;
+  }
+
 }
 
 .carousel-button.prev {
   left: 10px;
   background-image: url('../img/1.svg');
+
+  @media screen and (max-width: 720px) {
+    background-image: none;
+    left: 0;
+
+
+  }
 }
 
 .carousel-button.next {
   right: 10px;
   background-image: url('../img/1.svg');
   transform: scaleX(-1);
+
+  @media screen and (max-width: 720px) {
+    background-image: none;
+    right: 0;
+
+
+
+  }
 }
 
 .close-offer {
