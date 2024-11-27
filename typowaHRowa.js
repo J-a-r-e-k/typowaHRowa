@@ -128,7 +128,6 @@ const bio = () => {
 const offer = () => {
   elementOffer.style.display = 'flex';
   body.style.overflow = 'hidden';
-  Carousel();
 
 };
 
@@ -301,6 +300,7 @@ const Carousel = () => {
     // goToSlide: 0,
   };
 };
+Carousel();
 
 
 ///////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
