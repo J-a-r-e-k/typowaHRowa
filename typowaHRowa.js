@@ -64,10 +64,13 @@ const nav = (flag) => {
     // navBoard.style.display = 'flex';
     navBoard.style.right = '50%';
     body.style.overflow = 'hidden';
+    body.style.touchAction = 'none';
+
     document.documentElement.style.overflow = 'hidden';
   } else {
     navBoard.style.right = '';
     body.style.overflow = 'scroll';
+    body.style.touchAction = 'auto';
     document.documentElement.style.overflow = 'scroll';
   }
 };
@@ -122,6 +125,7 @@ const bio = () => {
   elementBio.style.display = 'flex';
   body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'hidden';
+  body.style.touchAction = 'none';
 
 
 };
@@ -130,6 +134,7 @@ const offer = () => {
   elementOffer.style.display = 'flex';
   body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'hidden';
+  body.style.touchAction = 'none';
 
 
 
@@ -140,6 +145,7 @@ const close = () => {
   elementOffer.style.display = 'none';
   body.style.overflow = 'scroll';
   document.documentElement.style.overflow = 'scroll';
+  body.style.touchAction = 'auto';
 
 
 
