@@ -847,6 +847,8 @@ body {
             justify-content: start;
     -ms-touch-action: double-tap-zoom;
         touch-action: double-tap-zoom;
+  }
+  .wrap__offer > * {
     -ms-touch-action: pan-x;
         touch-action: pan-x;
   }
