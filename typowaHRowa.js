@@ -61,15 +61,16 @@ const startPosition = () => {
 const nav = (flag) => {
   document.querySelector('.nav__icon').classList.toggle('nav__icon--active');
   if (flag && navBoard.style.right == '') {
-    console.log('okkk')
     // navBoard.style.display = 'flex';
     navBoard.style.right = '50%';
     body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   } else {
     console.log('xxxx')
-    // navBoard.style.display = '';
+
     navBoard.style.right = '';
     body.style.overflow = 'scroll';
+    document.documentElement.style.overflow = 'scroll';
   }
 };
 //Menu color depends on scroll//
@@ -123,11 +124,17 @@ const navBtn = (btn) => {
 const bio = () => {
   elementBio.style.display = 'flex';
   body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
+
+
 };
 
 const offer = () => {
   elementOffer.style.display = 'flex';
   body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
+
+
 
 };
 
@@ -135,6 +142,8 @@ const close = () => {
   elementBio.style.display = 'none';
   elementOffer.style.display = 'none';
   body.style.overflow = 'scroll';
+  document.documentElement.style.overflow = 'scroll';
+
 
 
 };
