@@ -1200,8 +1200,8 @@ body {
 }
 @media screen and (max-width: 720px) {
   .carousel-button {
-    bottom: 40px;
-    height: 100vh;
+    bottom: 50px;
+    height: 80vh;
   }
 }
 

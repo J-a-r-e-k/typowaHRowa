@@ -174,22 +174,7 @@ const Carousel = () => {
     }
   };
 
-  // const slide = (direction) => {
-  //   const slideWidth = slides[0].offsetWidth;
-  //   const maxIndex = slides.length - 1;
 
-  //   currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + direction));
-  //   currentTranslate = prevTranslate = -currentIndex * slideWidth;
-
-  //   track.style.transition = 'transform 0.3s ease-out';
-  //   setSlidePosition();
-
-  //   setTimeout(() => {
-  //     track.style.transition = 'none';
-  //   }, 300);
-  // };
-
-  // Modyfikujemy funkcję slide, aby aktualizowała kropki
   const slide = (direction) => {
     const slideWidth = slides[0].offsetWidth;
     const maxIndex = slides.length - 1;
@@ -231,7 +216,7 @@ const Carousel = () => {
 
     const movedBy = currentTranslate - prevTranslate;
 
-    if (Math.abs(movedBy) > 100) {
+    if (Math.abs(movedBy) > 10) {
       if (movedBy < 0) {
         slide(1);
       } else {
