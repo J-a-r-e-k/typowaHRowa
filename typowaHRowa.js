@@ -66,8 +66,6 @@ const nav = (flag) => {
     body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
   } else {
-    console.log('xxxx')
-
     navBoard.style.right = '';
     body.style.overflow = 'scroll';
     document.documentElement.style.overflow = 'scroll';
@@ -113,7 +111,6 @@ const navBtn = (btn) => {
   nav(false);
   setTimeout(() => {
     const topElement = document.querySelector(`#${btn.target.name}`).offsetTop;
-    console.log(topElement);
     window.scrollTo({
       top: innerWidth < 1024 ? topElement : topElement - 100,
       behavior: 'smooth', // Płynne przewijanie
