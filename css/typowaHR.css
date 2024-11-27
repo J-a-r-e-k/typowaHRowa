@@ -845,6 +845,8 @@ body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
+    -ms-touch-action: double-tap-zoom;
+        touch-action: double-tap-zoom;
   }
 }
 @media (orientation: landscape) and (max-width: 720px) {
