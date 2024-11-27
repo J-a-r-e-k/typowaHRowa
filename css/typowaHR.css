@@ -1266,6 +1266,7 @@ body {
 @media (max-width: 720px) {
   .carousel-dots {
     gap: 5px;
+    bottom: 40px;
   }
 }
 
