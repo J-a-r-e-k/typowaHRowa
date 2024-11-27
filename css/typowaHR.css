@@ -1250,6 +1250,46 @@ body {
   }
 }
 
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+@media (max-width: 720px) {
+  .carousel-dots {
+    gap: 5px;
+    bottom: 50px;
+  }
+}
+
+.carousel-dot {
+  width: 13px;
+  height: 8px;
+  border-radius: 50px;
+  background: rgba(153, 153, 153, 0.3098039216);
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  width: 20px;
+  height: 9px;
+  background: #aaa;
+  -webkit-transform: scaleX(1.2);
+      -ms-transform: scaleX(1.2);
+          transform: scaleX(1.2);
+}
+
 .recruitment {
   padding: 3%;
 }

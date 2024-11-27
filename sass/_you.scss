@@ -485,3 +485,36 @@
     right: 5px;
   }
 }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+
+  @media (max-width:720px) {
+    gap: 5px;
+    bottom: 50px;
+
+  }
+}
+
+.carousel-dot {
+  width: 13px;
+  height: 8px;
+  border-radius: 50px;
+  background: #9999994f;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  width: 20px;
+  height: 9px;
+  background: #aaa;
+  transform: scaleX(1.2);
+}

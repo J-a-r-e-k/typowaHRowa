@@ -128,12 +128,16 @@ const bio = () => {
 const offer = () => {
   elementOffer.style.display = 'flex';
   body.style.overflow = 'hidden';
+  Carousel();
+
 };
 
 const close = () => {
   elementBio.style.display = 'none';
   elementOffer.style.display = 'none';
   body.style.overflow = 'scroll';
+
+
 };
 
 let debounceTimeout;
@@ -170,6 +174,22 @@ const Carousel = () => {
     }
   };
 
+  // const slide = (direction) => {
+  //   const slideWidth = slides[0].offsetWidth;
+  //   const maxIndex = slides.length - 1;
+
+  //   currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + direction));
+  //   currentTranslate = prevTranslate = -currentIndex * slideWidth;
+
+  //   track.style.transition = 'transform 0.3s ease-out';
+  //   setSlidePosition();
+
+  //   setTimeout(() => {
+  //     track.style.transition = 'none';
+  //   }, 300);
+  // };
+
+  // Modyfikujemy funkcję slide, aby aktualizowała kropki
   const slide = (direction) => {
     const slideWidth = slides[0].offsetWidth;
     const maxIndex = slides.length - 1;
@@ -179,6 +199,9 @@ const Carousel = () => {
 
     track.style.transition = 'transform 0.3s ease-out';
     setSlidePosition();
+
+    // Aktualizujemy stan kropek po przesunięciu
+    updateDots();
 
     setTimeout(() => {
       track.style.transition = 'none';
@@ -237,13 +260,63 @@ const Carousel = () => {
   // Prevent dragging
   track.addEventListener('dragstart', (e) => e.preventDefault());
 
-  // return {
-  // next: () => slide(1),
-  // prev: () => slide(-1),
-  // goToSlide: (index) => slide(index - currentIndex),
-  // };
+  /////////////////////////////////////
+  const createDotNavigation = () => {
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'carousel-dots';
+
+    // Dodajemy style dla kropek
+    const style = document.createElement('style');
+    document.head.appendChild(style);
+
+    // Tworzymy kropki dla każdego slajdu
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      if (index === 0) dot.classList.add('active');
+
+      // Dodajemy event listener do każdej kropki
+      dot.addEventListener('click', () => {
+        const diff = index - currentIndex;
+        slide(diff);
+        updateDots();
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+
+    // Dodajemy kontener z kropkami do karuzeli
+    container.appendChild(dotsContainer);
+
+    return dotsContainer;
+  };
+
+  // Funkcja aktualizująca stan kropek
+  const updateDots = () => {
+    const dots = container.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  };
+
+
+
+  // Inicjalizacja nawigacji kropek
+  createDotNavigation();
+
+
+
+  return {
+    // next: () => slide(1),
+    // prev: () => slide(-1),
+    // goToSlide: 0,
+  };
 };
-Carousel();
+
 
 ///////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 document
