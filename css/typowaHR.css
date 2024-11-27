@@ -1189,6 +1189,11 @@ body {
       touch-action: pan-x;
 }
 
+.carousel-slide > * {
+  -ms-touch-action: pan-x;
+      touch-action: pan-x;
+}
+
 .carousel-button {
   position: absolute;
   bottom: 20%;

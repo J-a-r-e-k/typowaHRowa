@@ -423,6 +423,10 @@
   // }
 }
 
+.carousel-slide>* {
+  touch-action: pan-x;
+}
+
 .carousel-button {
   position: absolute;
   bottom: 20%;
