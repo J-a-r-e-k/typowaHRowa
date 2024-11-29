@@ -9,7 +9,7 @@ const section = document.querySelectorAll('.sectionNav');
 
 const container = document.querySelector('.carousel-container');
 const track = container.querySelector('.carousel-track');
-const track1 = container.querySelectorAll('.carousel-slide');
+const trackTouch = container.querySelectorAll('.carousel-slide');
 const slides = Array.from(track.children);
 const nextButton = container.querySelector('.next');
 const prevButton = container.querySelector('.prev');
@@ -159,7 +159,7 @@ function debounce(func, delay) {
     debounceTimeout = setTimeout(() => func.apply(this, args), delay);
   };
 }
-//////////////////////
+//Slider//
 const Carousel = () => {
   // Stan wewnętrzny
   let isDragging = false;
@@ -244,17 +244,12 @@ const Carousel = () => {
   prevButton.addEventListener('click', () => slide(-1));
 
   // Touch events
-
-
-  track1.forEach((e) => {
+  trackTouch.forEach((e) => {
     e.addEventListener('touchstart', touchStart);
     e.addEventListener('touchmove', touchMove);
     e.addEventListener('touchend', touchEnd);
   })
 
-  // track.addEventListener('touchstart', touchStart);
-  // track.addEventListener('touchmove', touchMove);
-  // track.addEventListener('touchend', touchEnd);
 
   // Mouse events
   track.addEventListener('mousedown', touchStart);
@@ -265,7 +260,6 @@ const Carousel = () => {
   // Prevent dragging
   track.addEventListener('dragstart', (e) => e.preventDefault());
 
-  /////////////////////////////////////
   const createDotNavigation = () => {
     const dotsContainer = document.createElement('div');
     dotsContainer.className = 'carousel-dots';
@@ -324,7 +318,7 @@ const Carousel = () => {
 Carousel();
 
 
-///////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 document
   .querySelector('.header__logo')
   .addEventListener('click', () => window.scrollTo(0, 0));
