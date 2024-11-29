@@ -818,12 +818,6 @@ body {
   text-shadow: 1px 0 0;
 }
 
-.offer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .wrap__offer {
   width: 80%;
   height: 80%;
