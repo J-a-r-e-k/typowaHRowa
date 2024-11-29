@@ -9,6 +9,7 @@ const section = document.querySelectorAll('.sectionNav');
 
 const container = document.querySelector('.carousel-container');
 const track = container.querySelector('.carousel-track');
+const track1 = container.querySelectorAll('.carousel-slide');
 const slides = Array.from(track.children);
 const nextButton = container.querySelector('.next');
 const prevButton = container.querySelector('.prev');
@@ -243,9 +244,17 @@ const Carousel = () => {
   prevButton.addEventListener('click', () => slide(-1));
 
   // Touch events
-  track.addEventListener('touchstart', touchStart);
-  track.addEventListener('touchmove', touchMove);
-  track.addEventListener('touchend', touchEnd);
+
+
+  track1.forEach((e) => {
+    e.addEventListener('touchstart', touchStart);
+    e.addEventListener('touchmove', touchMove);
+    e.addEventListener('touchend', touchEnd);
+  })
+
+  // track.addEventListener('touchstart', touchStart);
+  // track.addEventListener('touchmove', touchMove);
+  // track.addEventListener('touchend', touchEnd);
 
   // Mouse events
   track.addEventListener('mousedown', touchStart);

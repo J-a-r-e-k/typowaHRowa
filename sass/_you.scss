@@ -408,6 +408,7 @@
 .carousel-track {
   display: flex;
   transition: transform 0.3s ease-out;
+
 }
 
 .carousel-slide {
@@ -442,10 +443,7 @@
   transition: linear 0.1s;
 
   @media screen and (max-width: 720px) {
-
     bottom: 50px;
-
-
     height: 80vh;
     // background-color: transparent;
 
