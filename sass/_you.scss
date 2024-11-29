@@ -75,7 +75,7 @@
 
 //OFFER//
 .offer {
-  // display: flex;
+  display: flex;
 
 }
 
@@ -90,6 +90,8 @@
   box-shadow: 0 0 5px 0px #ddd;
   border-radius: 5px;
   position: relative;
+
+
 
   @media (max-width: 720px) {
     width: 100%;
@@ -119,9 +121,7 @@
 
 
   @media (max-width: 720px) {
-    >h2 {
-      flex: 1;
-    }
+    justify-content: center;
   }
 }
 
@@ -331,6 +331,9 @@
   display: flex;
   margin-top: 5px;
   position: relative;
+  width: fit-content;
+
+
 }
 
 .offer__list--center {
@@ -344,7 +347,7 @@
 }
 
 .offer__text--cooperation {
-  margin-top: 5px;
+  // margin-top: 5px;
   font-size: 1.4rem;
 
   span {
@@ -366,11 +369,12 @@
 .offer__arrow {
   margin-right: 20px;
   width: 50px;
-  height: fit-content;
-  transform: translateY(5px);
+  height: 30px;
+  transform: translateY(3px);
 
   @media (max-width: 720px) {
     width: 30px;
+    transform: translateY(0px);
   }
 }
 
