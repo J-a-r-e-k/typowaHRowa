@@ -7,9 +7,11 @@
   color: black;
   font-family: nowregular, Arial, Helvetica, sans-serif;
   font-size: 10px;
+
   h1 {
     font-weight: normal;
   }
+
   h2 {
     font-weight: normal;
   }
@@ -34,12 +36,14 @@ body {
   margin: 0 auto;
   max-width: 1400px;
 }
+
 .nameSection {
   margin: 1rem 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
+
 .nameSection__icon {
   height: 50px;
   padding-right: 10px;
@@ -53,9 +57,11 @@ body {
   text-align: center;
   text-shadow: 0.5px 0 0;
 }
+
 .nameSection__title--youChange {
   font-size: 1.6rem;
 }
+
 .btn {
   margin: 10px 10px 10px auto;
   width: fit-content;
@@ -65,20 +71,408 @@ body {
   cursor: pointer;
   align-items: center;
   text-shadow: 0.7px 0 0;
+
   @media (min-width: 720px) {
     margin-bottom: 50px;
   }
 }
+
 .btn__icon {
   width: 60px;
 }
+
 .btn__icon--taskCooperation {
   height: 20px;
   transform-origin: right;
   rotate: -45deg;
 }
+
 .btn__description {
   padding: 10px 0 10px 10px;
   font-size: 1.7rem;
   text-align: left;
+}
+
+//Offer
+
+.wrap__offer {
+
+  width: 80%;
+  height: 80%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 5px 0px #ddd;
+  border-radius: 5px;
+  position: relative;
+
+  @media (max-width: 720px) {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 80px;
+    justify-content: start;
+    touch-action: double-tap-zoom;
+
+
+
+  }
+
+  @media (orientation: landscape) and (max-width: 720px) {
+
+    overflow-y: auto;
+  }
+
+}
+
+.wrap__offer--center {
+  align-items: center;
+}
+
+.wrap__offer--support {
+  flex-direction: row;
+  align-items: center;
+
+
+  @media (max-width: 720px) {
+    justify-content: center;
+  }
+}
+
+
+
+
+
+.offer_title {
+  font-size: 4rem;
+  line-height: 2em;
+  text-shadow: 0 0px 0.5px;
+  text-align: center;
+
+  @media (max-width: 720px) {
+    font-size: 2.2rem;
+  }
+}
+
+.offer_title--list {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 2.6rem;
+
+  @media (max-width: 720px) {
+    position: unset;
+    font-size: 1.8rem;
+
+  }
+}
+
+.offer_title--Individual {
+
+  margin: 0 auto;
+  font-size: 3rem;
+  line-height: 2em;
+
+  span {
+    font-size: 4rem;
+    line-height: 2em;
+    text-shadow: 0 0px 0.5px;
+  }
+
+  @media (max-width: 720px) {
+    margin-top: 40px;
+    font-size: 2.2rem;
+    text-align: center;
+
+    span {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.offer_description {
+  width: 90%;
+  font-size: 3rem;
+  line-height: 2em;
+  text-align: center;
+
+  @media (max-width: 720px) {
+    font-size: 1.8rem;
+  }
+}
+
+.offer__icon {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 80px;
+
+  @media (max-width: 720px) {
+    position: unset;
+    margin: auto 0 0 auto;
+  }
+}
+
+.offer__clickMe {
+  margin: 0 auto;
+  height: 100px;
+  width: 450px;
+  text-align: center;
+  background-image: url('../img/clickMe.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    font-size: 3rem;
+    color: #f856a6;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width:720px) {
+    height: 80px;
+    width: 100%;
+    bottom: 40%;
+  }
+
+}
+
+.offer__icon--start {
+  position: unset;
+  width: 200px;
+
+  @media (max-width: 720px) {
+    width: 150px;
+    margin: 20px auto;
+  }
+}
+
+.offer__icon--question {
+  height: 200px;
+  margin-left: 20px;
+
+  @media (max-width: 720px) {
+    height: 100px;
+  }
+}
+
+.offer__logoQuestion {
+  @media (max-width: 720px) {
+    position: absolute;
+    bottom: 80px;
+
+  }
+}
+
+.offer__nameBenefits {
+  font-size: 2rem;
+  text-shadow: 0 0 0.1px;
+  width: 90%;
+  margin: 5px auto;
+
+  @media (max-width: 720px) {
+    width: fit-content;
+    margin: 0;
+
+
+  }
+
+}
+
+.offer__aboutMy {
+  background-image: url('../img/list.svg');
+  margin: 0 auto;
+  width: 50%;
+  height: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    padding: 5px;
+
+    a {
+      margin-left: 10px;
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (max-width: 720px) or (orientation: portrait) {
+    margin-top: 20%;
+    width: 100%;
+    height: 80vw;
+
+
+    div {
+      width: 80%;
+    }
+  }
+}
+
+.offer__wrapList {
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 720px) {
+    flex: 0;
+    width: 90%;
+  }
+
+}
+
+.offer__wrapList--fillAvailable {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.offer__wrapList--line {
+  li {
+    list-style: none;
+
+    ::before {
+      content: "-";
+      padding-right: 8px;
+    }
+  }
+}
+
+.offer__text {
+  font-size: 1.6rem;
+
+  @media (max-width: 720px) {
+    font-size: 1.4rem;
+  }
+}
+
+.offer__text--bold {
+  text-shadow: 0 0 .3px;
+}
+
+.offer__text--cooperation {
+  font-size: 1.6rem;
+  min-width: 300px;
+
+  span {
+    font-size: 1.6rem;
+    text-shadow: 0 0 .3px;
+
+  }
+
+  @media (max-width: 720px) {
+    font-size: 1.4rem;
+    min-width: auto;
+    width: fit-content;
+
+    span {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+
+
+.offer__list {
+  margin: 10px auto;
+  width: 80%;
+  list-style: disc;
+  font-size: 1.6rem;
+
+  @media (max-width: 720px) {
+    font-size: 1.2rem;
+    width: 90%;
+
+
+
+  }
+
+
+}
+
+
+.offer__list--benefits {
+  display: flex;
+  margin-top: 5px;
+  position: relative;
+  transform: translateX(-20px);
+
+
+
+
+
+}
+
+.offer__list--appointmentMe {
+  justify-content: center;
+  min-height: 90px;
+
+
+}
+
+.offer__list--center {
+  margin-bottom: 10%;
+}
+
+
+
+.offer__list--flex {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 720px) {
+    flex-shrink: 1;
+    width: 100%;
+  }
+
+}
+
+
+
+
+.offer__text--individual {
+  margin-top: 20px;
+}
+
+.offer__arrow {
+  margin-right: 20px;
+  width: 50px;
+  height: 30px;
+  transform: translateY(3px);
+
+  @media (max-width: 720px) {
+    width: 30px;
+    transform: translateY(0px);
+  }
+}
+
+.offer__textStar {
+  font-size: 1.2rem;
+}
+
+.offer__arrow--upIndividual {
+  height: 80px;
+}
+
+.offer__footnote {
+  text-align: center;
+
+}
+
+.offer__addDot::before {
+  content: "●";
+  padding-right: 8px;
 }

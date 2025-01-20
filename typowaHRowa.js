@@ -5,14 +5,14 @@ const navBoard = document.querySelector('.nav__elements');
 const navText = document.querySelectorAll('.nav__text');
 const elementBio = document.querySelector('.bio');
 const elementOffer = document.querySelector('.offer');
+const elementIndividualOffer = document.querySelector('.individualOffer');
 const section = document.querySelectorAll('.sectionNav');
 
-const container = document.querySelector('.carousel-container');
-const track = container.querySelector('.carousel-track');
-const trackTouch = container.querySelectorAll('.carousel-slide');
-const slides = Array.from(track.children);
-const nextButton = container.querySelector('.next');
-const prevButton = container.querySelector('.prev');
+const containerOffer = document.querySelector('.carousel-container--offer');
+const containerIndividualOffer = document.querySelector('.carousel-container--individualOffer');
+
+
+
 
 //Partner//
 const time = 7;
@@ -122,6 +122,10 @@ const navBtn = (btn) => {
   }, 50);
 };
 
+
+
+
+
 const bio = () => {
   elementBio.style.display = 'flex';
   body.style.overflow = 'hidden';
@@ -136,38 +140,40 @@ const offer = () => {
   body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'hidden';
   body.style.touchAction = 'none';
+  Carousel(containerOffer);
 
 
 
 };
-
-const close = () => {
-  elementBio.style.display = 'none';
-  elementOffer.style.display = 'none';
-  body.style.overflow = 'scroll';
-  document.documentElement.style.overflow = 'scroll';
-  body.style.touchAction = 'auto';
-
-
-
+const individualOffer = () => {
+  elementIndividualOffer.style.display = 'flex';
+  body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
+  body.style.touchAction = 'none';
+  Carousel(containerIndividualOffer);
 };
 
-let debounceTimeout;
-function debounce(func, delay) {
-  return function (...args) {
-    clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => func.apply(this, args), delay);
-  };
-}
 //Slider//
-const Carousel = () => {
+const Carousel = (nameBoard) => {
+
   // Stan wewnętrzny
   let isDragging = false;
   let startPos = 0;
-  let currentTranslate = 0;
+  let currentTranslate = 0
   let prevTranslate = 0;
   let animationID = 0;
   let currentIndex = 0;
+
+
+
+  const container = nameBoard
+  const track = container.querySelector('.carousel-track');
+  const trackTouch = container.querySelectorAll('.carousel-slide');
+  const slides = Array.from(track.children);
+  const nextButton = container.querySelector('.next');
+  const prevButton = container.querySelector('.prev');
+
+
 
   const getPositionX = (event) => {
     return event.type.includes('mouse')
@@ -178,6 +184,7 @@ const Carousel = () => {
   const setSlidePosition = () => {
     track.style.transform = `translateX(${currentTranslate}px)`;
   };
+
 
   const animation = () => {
     setSlidePosition();
@@ -203,6 +210,14 @@ const Carousel = () => {
     setTimeout(() => {
       track.style.transition = 'none';
     }, 300);
+  };
+
+  const resetCarousel = () => {
+    currentIndex = 0;
+    currentTranslate = 0;
+    prevTranslate = 0;
+    setSlidePosition();
+    updateDots();
   };
 
   // Handlery eventów
@@ -261,6 +276,7 @@ const Carousel = () => {
   track.addEventListener('dragstart', (e) => e.preventDefault());
 
   const createDotNavigation = () => {
+    if (container.querySelector('.carousel-dots')) return;
     const dotsContainer = document.createElement('div');
     dotsContainer.className = 'carousel-dots';
 
@@ -290,6 +306,8 @@ const Carousel = () => {
     return dotsContainer;
   };
 
+
+
   // Funkcja aktualizująca stan kropek
   const updateDots = () => {
     const dots = container.querySelectorAll('.carousel-dot');
@@ -301,13 +319,9 @@ const Carousel = () => {
       }
     });
   };
-
-
-
   // Inicjalizacja nawigacji kropek
   createDotNavigation();
-
-
+  resetCarousel();
 
   return {
     // next: () => slide(1),
@@ -315,7 +329,29 @@ const Carousel = () => {
     // goToSlide: 0,
   };
 };
-Carousel();
+
+
+const close = () => {
+  elementBio.style.display = 'none';
+  elementOffer.style.display = 'none';
+  elementIndividualOffer.style.display = 'none';
+  body.style.overflow = 'scroll';
+  document.documentElement.style.overflow = 'scroll';
+  body.style.touchAction = 'auto';
+
+
+
+
+};
+
+let debounceTimeout;
+function debounce(func, delay) {
+  return function (...args) {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
 
 
 
@@ -327,6 +363,9 @@ document.querySelector('.btn__description--bio').addEventListener('click', bio);
 document
   .querySelector('.btn__description--offer')
   .addEventListener('click', offer);
+document
+  .querySelector('.btn__description--IndividualOffer')
+  .addEventListener('click', individualOffer);
 document
   .querySelectorAll('.closeSvg')
   .forEach((e) => e.addEventListener('click', close));

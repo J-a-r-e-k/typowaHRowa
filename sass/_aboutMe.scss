@@ -14,6 +14,7 @@
   word-spacing: 4px;
   letter-spacing: 0.7px;
 }
+
 .me__name {
   padding: 10px 0 10px 0;
   font-size: 3.2rem;
@@ -28,16 +29,19 @@
 .work {
   display: flex;
   justify-content: space-around;
+
   @media screen and (max-width: 940px) {
     padding: 10px;
     flex-direction: column;
   }
 }
+
 .work__myJob {
   flex-basis: 25%;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+
   @media screen and (max-width: 940px) {
     justify-content: center;
   }
@@ -57,6 +61,7 @@
   font-size: 2.2rem;
   line-height: 2em;
   text-shadow: 0.5px 0 0;
+
   @media screen and (max-width: 720px) {
     width: 40%;
     min-width: fit-content;
@@ -65,11 +70,13 @@
 
 .work__collection {
   width: 100%;
+
   @media screen and (min-width: 940px) {
     margin: 0 auto;
     width: 50%;
   }
 }
+
 .work__description {
   margin: 0 auto 0 5px;
   width: fit-content;
@@ -83,29 +90,36 @@
   align-items: center;
   padding: 3%;
 }
+
 .partner__cooperation {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin-top: 1rem;
+
   @media (min-width: 900px) {
     flex-direction: row;
     width: 100%;
   }
+
   @media (orientation: landscape) and (max-width: 900px) {
     width: 90%;
   }
 }
+
 .partner__wrapDescription {
   width: 35%;
+
   @media (max-width: 900px) {
     width: 100%;
   }
 }
+
 .partner__description {
   text-align: left;
   font-size: 1.8rem;
+
   @media (max-width: 900px) {
     text-align: center;
   }
@@ -115,7 +129,9 @@
   margin: 0 auto;
   overflow: hidden;
   width: 100%;
-  @media screen and (min-width: 920px), (orientation: landscape) {
+
+  @media screen and (min-width: 920px),
+  (orientation: landscape) {
     width: 60%;
   }
 }
@@ -131,13 +147,16 @@
   font-size: 1.4rem;
   animation: brand 7s infinite linear alternate;
 }
+
 .partner__Company--alternate {
   animation: brand 7s infinite linear alternate-reverse;
 }
+
 @keyframes brand {
   0% {
     left: 100%;
   }
+
   100% {
     left: -100%;
   }
@@ -150,51 +169,58 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-
-  // min-height: 500px;
-  // overflow: scroll;
   z-index: 1;
   display: none;
   align-items: center;
   justify-content: center;
   background-color: #f8f8f8;
+
   @media (max-width: 1023px) and (orientation: portrait) {
     flex-direction: column-reverse;
   }
 }
+
 .photoBio {
   height: 30rem;
   margin: 20px;
+
   @media (max-width: 1024px) {
     height: min(20vh, 80rem);
     flex-shrink: 1;
   }
 }
+
 .bio__description {
   margin: 20px;
   flex-shrink: 1;
   max-height: 70%;
   overflow: auto;
+
   @media (orientation: landscape) {
     max-width: 60%;
     max-height: 85%;
   }
+
   p {
     font-size: 1.6rem;
     line-height: 2em;
+
     @media (max-width: 1024px) {
       font-size: 1rem;
       text-align: center;
     }
   }
+
   span {
     font-size: 2.5rem;
     line-height: 2em;
     font-weight: bold;
+
     @media (max-width: 1024px) {
       font-size: 1.2rem;
     }
   }
+
   .closeSvg {
     display: block;
     margin: 0 10px 0 auto;
@@ -207,4 +233,5 @@
     }
   }
 }
+
 //* END POPAP MOJE BIO

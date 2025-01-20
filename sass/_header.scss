@@ -48,6 +48,7 @@
 .meet__icon {
   width: fit-content;
   position: relative;
+  color: #ff02c9;
 
 
 }
@@ -161,20 +162,30 @@
   color: #000;
 }
 
-.header__person {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  width: 30%;
+.header__wrapPerson {
+  position: sticky;
+  top: 30%;
+  height: 60%;
+  background: url('../img/TypowoAgata.png') center calc(-240px)/cover no-repeat;
 
-  max-width: 350px;
+  @media screen and (max-width: 1024px) {
+    background-position: center calc(-120px);
+  }
+
 
   @media screen and (orientation: portrait) {
-    width: 60%;
+    // position: sticky;
+    height: 40%;
+    background: url('../img/TypowoAgata.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
   }
 
-  @media screen and (max-width: 940px) and (orientation: landscape) {
-    max-width: 200px;
-  }
+
+
+
 }
+
+.header__person {}

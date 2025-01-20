@@ -4,9 +4,11 @@
 
 .taskCooperation {
   margin: 0 auto;
+
   li {
     display: flex;
     align-items: center;
+
     p {
       padding-left: 10px;
       font-size: 1.6rem;
@@ -19,6 +21,7 @@
   height: 80vh;
   display: flex;
   align-items: center;
+
   @media screen and (orientation: portrait) and (max-width: 720px) {
     flex-direction: column;
     height: 110vh;
@@ -38,16 +41,85 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (orientation: landscape), (min-width: 720px) {
+
+  @media screen and (orientation: landscape),
+  (min-width: 720px) {
     width: 30%;
     min-height: 30rem;
   }
 }
+
 .cooperationMe__description {
   font-size: 1.8rem;
   line-height: 2em;
   text-align: center;
+
   @media screen and (orientation: landscape) and (max-width: 720px) {
     font-size: 1.5rem;
   }
 }
+
+.cooperationMe__wrapOffer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  img {
+    width: 700px;
+
+
+  }
+
+  @media screen and (max-width: 720px) {
+    flex-direction: column-reverse;
+
+    img {
+      width: 200px;
+
+    }
+  }
+
+}
+
+.cooperationMe__wrapOfferText {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+
+
+.cooperationMe__descriptionOffer {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  line-height: 2em;
+
+  li {
+    text-align: start;
+  }
+
+  @media screen and (orientation: landscape) and (max-width: 720px) {
+    font-size: 1.5rem;
+  }
+}
+
+.cooperationMe__spanDesignation {
+  font-size: 1.8rem;
+  line-height: 2em;
+  text-shadow: 0.5px 0.5px;
+}
+
+
+
+// .offer_individual_description {
+//   // width: 90%;
+//   font-size: 2rem;
+//   line-height: 1.5em;
+//   text-align: center;
+
+//   @media (max-width: 720px) {
+//     font-size: 1.8rem;
+//   }
+// }
