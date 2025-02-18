@@ -737,9 +737,10 @@ body {
 }
 
 .header__wrapPerson {
-  position: sticky;
+  position: absolute;
   top: 30%;
   height: 60%;
+  width: 100%;
   background: url("../img/Agatka1.png") center -220px/cover no-repeat;
 }
 @media screen and (max-width: 1024px) {
