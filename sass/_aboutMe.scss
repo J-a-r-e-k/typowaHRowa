@@ -183,6 +183,7 @@
 .photoBio {
   height: 30rem;
   margin: 20px;
+  border-radius: 10px;
 
   @media (max-width: 1024px) {
     height: min(20vh, 80rem);

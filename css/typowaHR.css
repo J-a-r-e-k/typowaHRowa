@@ -737,7 +737,7 @@ body {
   position: sticky;
   top: 30%;
   height: 60%;
-  background: url("../img/TypowoAgata.png") center -240px/cover no-repeat;
+  background: url("../img/Agatka1.png") center -220px/cover no-repeat;
 }
 @media screen and (max-width: 1024px) {
   .header__wrapPerson {
@@ -1006,6 +1006,7 @@ body {
 .photoBio {
   height: 30rem;
   margin: 20px;
+  border-radius: 10px;
 }
 @media (max-width: 1024px) {
   .photoBio {
