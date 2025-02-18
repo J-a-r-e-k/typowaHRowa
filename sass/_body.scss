@@ -113,6 +113,8 @@ body {
     padding-bottom: 80px;
     justify-content: start;
     touch-action: double-tap-zoom;
+    overflow-x: hidden;
+    overflow-y: auto;
 
 
 
@@ -221,6 +223,7 @@ body {
   background-image: url('../img/clickMe.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
