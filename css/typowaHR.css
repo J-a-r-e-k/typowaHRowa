@@ -989,9 +989,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   background-color: #f8f8f8;
 }
 @media (max-width: 1023px) and (orientation: portrait) {
@@ -1017,7 +1017,7 @@ body {
 }
 
 .bio__description {
-  margin: 20px;
+  margin: 5px 20px;
   -ms-flex-negative: 1;
       flex-shrink: 1;
   max-height: 70%;

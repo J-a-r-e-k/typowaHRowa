@@ -172,11 +172,12 @@
   z-index: 1;
   display: none;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   background-color: #f8f8f8;
 
   @media (max-width: 1023px) and (orientation: portrait) {
     flex-direction: column-reverse;
+
   }
 }
 
@@ -192,7 +193,8 @@
 }
 
 .bio__description {
-  margin: 20px;
+
+  margin: 5px 20px;
   flex-shrink: 1;
   max-height: 70%;
   overflow: auto;
@@ -200,6 +202,7 @@
   @media (orientation: landscape) {
     max-width: 60%;
     max-height: 85%;
+
   }
 
   p {
