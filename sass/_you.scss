@@ -116,10 +116,12 @@
   align-items: center;
   justify-content: center;
   touch-action: pan-x;
+  touch-action: pan-y;
 }
 
 .carousel-slide * {
   touch-action: pan-x;
+  touch-action: pan-y;
 }
 
 .carousel-button {

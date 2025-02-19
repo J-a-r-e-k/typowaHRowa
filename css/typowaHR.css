@@ -135,8 +135,6 @@ body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    -ms-touch-action: double-tap-zoom;
-        touch-action: double-tap-zoom;
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -290,13 +288,6 @@ body {
 @media (max-width: 720px) {
   .offer__icon--question {
     height: 100px;
-  }
-}
-
-@media (max-width: 720px) {
-  .offer__logoQuestion {
-    position: absolute;
-    bottom: 80px;
   }
 }
 
@@ -1352,11 +1343,15 @@ body {
           justify-content: center;
   -ms-touch-action: pan-x;
       touch-action: pan-x;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
 }
 
 .carousel-slide * {
   -ms-touch-action: pan-x;
       touch-action: pan-x;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
 }
 
 .carousel-button {
