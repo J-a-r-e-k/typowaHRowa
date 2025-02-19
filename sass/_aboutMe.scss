@@ -182,7 +182,7 @@
 }
 
 .photoBio {
-  height: 30rem;
+  height: 20rem;
   margin: 20px;
   border-radius: 10px;
 
@@ -196,17 +196,17 @@
 
   margin: 5px 20px;
   flex-shrink: 1;
-  max-height: 70%;
+  max-height: 75%;
   overflow: auto;
 
   @media (orientation: landscape) {
-    max-width: 60%;
+    max-width: 70%;
     max-height: 85%;
 
   }
 
   p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 2em;
 
     @media (max-width: 1024px) {
@@ -216,9 +216,9 @@
   }
 
   span {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     line-height: 2em;
-    font-weight: bold;
+    text-shadow: 0.1px 0.1px;
 
     @media (max-width: 1024px) {
       font-size: 1.2rem;
@@ -236,4 +236,17 @@
       height: 1.4rem;
     }
   }
+}
+
+.bio__description .bio__title {
+  font-size: 18px;
+  margin: 5px 0;
+  text-shadow: 0.1px 0.1px;
+}
+
+.bio__list {
+  margin: 2px 30px;
+  width: 80%;
+  list-style: disc;
+
 }
