@@ -3,7 +3,7 @@
 ![Screenshot of the app](./img/TyPowaHR.png)
 
 ## Demo
-🌐 [Live Demo](https://j-a-r-e-k.github.io/typowaHRowa/)
+🌐 [Live Demo](https://typowahrowa.pl/)
 
 ## English Description 🇬🇧
 
