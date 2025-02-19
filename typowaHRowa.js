@@ -144,34 +144,207 @@ const offer = () => {
 };
 const individualOffer = () => {
   elementIndividualOffer.style.display = 'flex';
-  body.style.overflow = 'hidden';
-  document.documentElement.style.overflow = 'hidden';
-  body.style.touchAction = 'none';
-  elementIndividualOffer.style.touchAction = 'auto'
+  // body.style.overflow = 'hidden';
+  // document.documentElement.style.overflow = 'hidden';
+  // body.style.touchAction = 'auto';
+  // elementIndividualOffer.style.touchAction = 'auto'
   Carousel(containerIndividualOffer);
 };
 
 //Slider//
-const Carousel = (nameBoard) => {
+// const Carousel = (nameBoard) => {
 
-  // Stan wewnętrzny
+//   // Stan wewnętrzny
+//   let isDragging = false;
+//   let startPos = 0;
+//   let currentTranslate = 0
+//   let prevTranslate = 0;
+//   let animationID = 0;
+//   let currentIndex = 0;
+
+
+
+//   const container = nameBoard
+//   const track = container.querySelector('.carousel-track');
+//   const trackTouch = container.querySelectorAll('.carousel-slide');
+//   const slides = Array.from(track.children);
+//   const nextButton = container.querySelector('.next');
+//   const prevButton = container.querySelector('.prev');
+
+
+
+//   const getPositionX = (event) => {
+//     return event.type.includes('mouse')
+//       ? event.pageX
+//       : event.touches[0].clientX;
+//   };
+
+//   const setSlidePosition = () => {
+//     track.style.transform = `translateX(${currentTranslate}px)`;
+//   };
+
+
+//   const animation = () => {
+//     setSlidePosition();
+//     if (isDragging) {
+//       animationID = requestAnimationFrame(animation);
+//     }
+//   };
+
+
+//   const slide = (direction) => {
+//     const slideWidth = slides[0].offsetWidth;
+//     const maxIndex = slides.length - 1;
+
+//     currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + direction));
+//     currentTranslate = prevTranslate = -currentIndex * slideWidth;
+
+//     track.style.transition = 'transform 0.3s ease-out';
+//     setSlidePosition();
+
+//     // Aktualizujemy stan kropek po przesunięciu
+//     updateDots();
+
+//     setTimeout(() => {
+//       track.style.transition = 'none';
+//     }, 300);
+//   };
+
+//   const resetCarousel = () => {
+//     currentIndex = 0;
+//     currentTranslate = 0;
+//     prevTranslate = 0;
+//     setSlidePosition();
+//     updateDots();
+//   };
+
+//   // Handlery eventów
+//   const touchStart = (event) => {
+//     isDragging = true;
+//     startPos = getPositionX(event);
+//     animationID = requestAnimationFrame(animation);
+//     track.style.cursor = 'grabbing';
+//   };
+
+//   const touchMove = (event) => {
+//     if (!isDragging) return;
+
+//     const currentPosition = getPositionX(event);
+//     const diff = currentPosition - startPos;
+//     currentTranslate = prevTranslate + diff;
+//   };
+
+//   const touchEnd = () => {
+//     isDragging = false;
+//     cancelAnimationFrame(animationID);
+//     track.style.cursor = 'grab';
+
+//     const movedBy = currentTranslate - prevTranslate;
+
+//     if (Math.abs(movedBy) > 100) {
+//       if (movedBy < 0) {
+//         slide(1);
+//       } else {
+//         slide(-1);
+//       }
+//     } else {
+//       slide(0);
+//     }
+//   };
+
+//   // Inicjalizacja event listenerów
+//   nextButton.addEventListener('click', () => slide(1));
+//   prevButton.addEventListener('click', () => slide(-1));
+
+//   // Touch events
+//   trackTouch.forEach((e) => {
+//     e.addEventListener('touchstart', touchStart);
+//     e.addEventListener('touchmove', touchMove);
+//     e.addEventListener('touchend', touchEnd);
+//   })
+
+
+//   // Mouse events
+//   track.addEventListener('mousedown', touchStart);
+//   track.addEventListener('mousemove', touchMove);
+//   track.addEventListener('mouseup', touchEnd);
+//   track.addEventListener('mouseleave', touchEnd);
+
+//   // Prevent dragging
+//   track.addEventListener('dragstart', (e) => e.preventDefault());
+
+//   const createDotNavigation = () => {
+//     if (container.querySelector('.carousel-dots')) return;
+//     const dotsContainer = document.createElement('div');
+//     dotsContainer.className = 'carousel-dots';
+
+//     // Dodajemy style dla kropek
+//     const style = document.createElement('style');
+//     document.head.appendChild(style);
+
+//     // Tworzymy kropki dla każdego slajdu
+//     slides.forEach((_, index) => {
+//       const dot = document.createElement('button');
+//       dot.className = 'carousel-dot';
+//       if (index === 0) dot.classList.add('active');
+
+//       // Dodajemy event listener do każdej kropki
+//       dot.addEventListener('click', () => {
+//         const diff = index - currentIndex;
+//         slide(diff);
+//         updateDots();
+//       });
+
+//       dotsContainer.appendChild(dot);
+//     });
+
+//     // Dodajemy kontener z kropkami do karuzeli
+//     container.appendChild(dotsContainer);
+
+//     return dotsContainer;
+//   };
+
+
+
+//   // Funkcja aktualizująca stan kropek
+//   const updateDots = () => {
+//     const dots = container.querySelectorAll('.carousel-dot');
+//     dots.forEach((dot, index) => {
+//       if (index === currentIndex) {
+//         dot.classList.add('active');
+//       } else {
+//         dot.classList.remove('active');
+//       }
+//     });
+//   };
+//   // Inicjalizacja nawigacji kropek
+//   createDotNavigation();
+//   resetCarousel();
+
+//   return {
+//     // next: () => slide(1),
+//     // prev: () => slide(-1),
+//     // goToSlide: 0,
+//   };
+// };
+////////
+const Carousel = (nameBoard) => {
   let isDragging = false;
   let startPos = 0;
-  let currentTranslate = 0
+  let currentTranslate = 0;
   let prevTranslate = 0;
   let animationID = 0;
   let currentIndex = 0;
+  let isScrolling;
+  let startY = 0;
+  let isVerticalScroll = false;
 
-
-
-  const container = nameBoard
+  const container = nameBoard;
   const track = container.querySelector('.carousel-track');
   const trackTouch = container.querySelectorAll('.carousel-slide');
   const slides = Array.from(track.children);
   const nextButton = container.querySelector('.next');
   const prevButton = container.querySelector('.prev');
-
-
 
   const getPositionX = (event) => {
     return event.type.includes('mouse')
@@ -179,10 +352,15 @@ const Carousel = (nameBoard) => {
       : event.touches[0].clientX;
   };
 
+  const getPositionY = (event) => {
+    return event.type.includes('mouse')
+      ? event.pageY
+      : event.touches[0].clientY;
+  };
+
   const setSlidePosition = () => {
     track.style.transform = `translateX(${currentTranslate}px)`;
   };
-
 
   const animation = () => {
     setSlidePosition();
@@ -190,7 +368,6 @@ const Carousel = (nameBoard) => {
       animationID = requestAnimationFrame(animation);
     }
   };
-
 
   const slide = (direction) => {
     const slideWidth = slides[0].offsetWidth;
@@ -201,8 +378,6 @@ const Carousel = (nameBoard) => {
 
     track.style.transition = 'transform 0.3s ease-out';
     setSlidePosition();
-
-    // Aktualizujemy stan kropek po przesunięciu
     updateDots();
 
     setTimeout(() => {
@@ -210,18 +385,13 @@ const Carousel = (nameBoard) => {
     }, 300);
   };
 
-  const resetCarousel = () => {
-    currentIndex = 0;
-    currentTranslate = 0;
-    prevTranslate = 0;
-    setSlidePosition();
-    updateDots();
-  };
-
-  // Handlery eventów
   const touchStart = (event) => {
+    isScrolling = undefined;
+    isVerticalScroll = false;
     isDragging = true;
     startPos = getPositionX(event);
+    startY = getPositionY(event);
+
     animationID = requestAnimationFrame(animation);
     track.style.cursor = 'grabbing';
   };
@@ -229,12 +399,42 @@ const Carousel = (nameBoard) => {
   const touchMove = (event) => {
     if (!isDragging) return;
 
-    const currentPosition = getPositionX(event);
-    const diff = currentPosition - startPos;
-    currentTranslate = prevTranslate + diff;
+    const currentX = getPositionX(event);
+    const currentY = getPositionY(event);
+
+    const diffX = currentX - startPos;
+    const diffY = currentY - startY;
+
+    // Określamy kierunek na początku ruchu
+    if (typeof isScrolling === 'undefined') {
+      isScrolling = Math.abs(diffY) > Math.abs(diffX) * 1.2;
+      if (isScrolling) {
+        isVerticalScroll = true;
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        return;
+      }
+    }
+
+    // Jeśli to scroll pionowy, pozwalamy na normalne przewijanie
+    if (isVerticalScroll) {
+      return;
+    }
+
+    // Jeśli to ruch poziomy, obsługujemy slider
+    if (!isScrolling) {
+      event.preventDefault();
+      currentTranslate = prevTranslate + diffX;
+      setSlidePosition();
+    }
   };
 
   const touchEnd = () => {
+    if (isVerticalScroll) {
+      isVerticalScroll = false;
+      return;
+    }
+
     isDragging = false;
     cancelAnimationFrame(animationID);
     track.style.cursor = 'grab';
@@ -252,43 +452,47 @@ const Carousel = (nameBoard) => {
     }
   };
 
-  // Inicjalizacja event listenerów
+  const resetCarousel = () => {
+    currentIndex = 0;
+    currentTranslate = 0;
+    prevTranslate = 0;
+    setSlidePosition();
+    updateDots();
+  };
+
+  // Event Listeners
   nextButton.addEventListener('click', () => slide(1));
   prevButton.addEventListener('click', () => slide(-1));
 
   // Touch events
-  trackTouch.forEach((e) => {
-    e.addEventListener('touchstart', touchStart);
-    e.addEventListener('touchmove', touchMove);
-    e.addEventListener('touchend', touchEnd);
-  })
-
+  trackTouch.forEach((slide) => {
+    slide.addEventListener('touchstart', touchStart, { passive: true });
+    slide.addEventListener('touchmove', touchMove, { passive: false });
+    slide.addEventListener('touchend', touchEnd);
+  });
 
   // Mouse events
   track.addEventListener('mousedown', touchStart);
   track.addEventListener('mousemove', touchMove);
   track.addEventListener('mouseup', touchEnd);
   track.addEventListener('mouseleave', touchEnd);
-
-  // Prevent dragging
   track.addEventListener('dragstart', (e) => e.preventDefault());
 
+  // Dots navigation
   const createDotNavigation = () => {
     if (container.querySelector('.carousel-dots')) return;
+
     const dotsContainer = document.createElement('div');
     dotsContainer.className = 'carousel-dots';
 
-    // Dodajemy style dla kropek
     const style = document.createElement('style');
     document.head.appendChild(style);
 
-    // Tworzymy kropki dla każdego slajdu
     slides.forEach((_, index) => {
       const dot = document.createElement('button');
       dot.className = 'carousel-dot';
       if (index === 0) dot.classList.add('active');
 
-      // Dodajemy event listener do każdej kropki
       dot.addEventListener('click', () => {
         const diff = index - currentIndex;
         slide(diff);
@@ -298,15 +502,10 @@ const Carousel = (nameBoard) => {
       dotsContainer.appendChild(dot);
     });
 
-    // Dodajemy kontener z kropkami do karuzeli
     container.appendChild(dotsContainer);
-
     return dotsContainer;
   };
 
-
-
-  // Funkcja aktualizująca stan kropek
   const updateDots = () => {
     const dots = container.querySelectorAll('.carousel-dot');
     dots.forEach((dot, index) => {
@@ -317,18 +516,13 @@ const Carousel = (nameBoard) => {
       }
     });
   };
-  // Inicjalizacja nawigacji kropek
+
   createDotNavigation();
   resetCarousel();
-
-  return {
-    // next: () => slide(1),
-    // prev: () => slide(-1),
-    // goToSlide: 0,
-  };
 };
 
 
+//////
 const close = () => {
   elementBio.style.display = 'none';
   elementOffer.style.display = 'none';
