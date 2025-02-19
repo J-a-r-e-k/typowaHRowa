@@ -62,7 +62,6 @@ const startPosition = () => {
 const nav = (flag) => {
   document.querySelector('.nav__icon').classList.toggle('nav__icon--active');
   if (flag && navBoard.style.right == '') {
-    // navBoard.style.display = 'flex';
     navBoard.style.right = '50%';
     body.style.overflow = 'hidden';
     body.style.touchAction = 'none';
@@ -77,7 +76,6 @@ const nav = (flag) => {
 };
 //Menu color depends on scroll//
 const scrolled = () => {
-  // console.log('ok');
   if (document.querySelector('.header').offsetHeight <= scrollY + 101) {
     wrapNav.classList.add('header__wrapNav--scrol');
     navBoard.style.backgroundColor = '#d9d9d9';
@@ -85,7 +83,6 @@ const scrolled = () => {
     wrapNav.classList.remove('header__wrapNav--scrol');
     navBoard.style.backgroundColor = '#fff';
   }
-
   //Bold selected text//
   section.forEach((e, index) => {
     navText[index].style.textShadow =
@@ -150,6 +147,7 @@ const individualOffer = () => {
   body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'hidden';
   body.style.touchAction = 'none';
+  elementIndividualOffer.style.touchAction = 'auto'
   Carousel(containerIndividualOffer);
 };
 
@@ -243,7 +241,7 @@ const Carousel = (nameBoard) => {
 
     const movedBy = currentTranslate - prevTranslate;
 
-    if (Math.abs(movedBy) > 10) {
+    if (Math.abs(movedBy) > 100) {
       if (movedBy < 0) {
         slide(1);
       } else {
