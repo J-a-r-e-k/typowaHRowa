@@ -162,7 +162,6 @@
   }
 }
 
-//* POPAP MOJE BIO
 .bio {
   position: fixed;
   top: 0;
@@ -177,7 +176,6 @@
 
   @media (max-width: 1023px) and (orientation: portrait) {
     flex-direction: column-reverse;
-
   }
 }
 
@@ -193,7 +191,6 @@
 }
 
 .bio__description {
-
   margin: 5px 20px;
   flex-shrink: 1;
   max-height: 75%;
@@ -202,7 +199,6 @@
   @media (orientation: landscape) {
     max-width: 70%;
     max-height: 85%;
-
   }
 
   p {
@@ -248,5 +244,4 @@
   margin: 2px 30px;
   width: 80%;
   list-style: disc;
-
 }

@@ -66,8 +66,6 @@
 
   img {
     width: 700px;
-
-
   }
 
   @media screen and (max-width: 720px) {
@@ -75,10 +73,8 @@
 
     img {
       width: 200px;
-
     }
   }
-
 }
 
 .cooperationMe__wrapOfferText {
@@ -86,10 +82,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
 }
-
-
 
 .cooperationMe__descriptionOffer {
   margin-bottom: 10px;
@@ -110,6 +103,3 @@
   line-height: 2em;
   text-shadow: 0.5px 0.5px;
 }
-
-
-

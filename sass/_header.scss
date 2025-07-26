@@ -44,13 +44,10 @@
   height: 100%;
 }
 
-
 .meet__icon {
   width: fit-content;
   position: relative;
   color: #ff02c9;
-
-
 }
 
 @media screen and (min-width: 720px) {
@@ -95,9 +92,7 @@
   @media (orientation: landscape) {
     bottom: 50%;
     transform: translateY(50%);
-
   }
-
 }
 
 .nav__icon--active {
@@ -127,7 +122,6 @@
   border-radius: 10px;
   z-index: 1;
   transition: all 0.3s ease;
-
 
   @media screen and (max-width: 940px) and (orientation: landscape) {
     justify-content: space-around;
@@ -173,9 +167,7 @@
     background-position: center calc(-120px);
   }
 
-
   @media screen and (orientation: portrait) {
-    // position: sticky;
     height: 40%;
     background-size: cover;
     background-position: center;

@@ -73,10 +73,6 @@
   }
 }
 
-//OFFER//
-
-
-
 .arrow__cooperation {
   width: 90px;
   margin-left: 5px;
@@ -86,14 +82,9 @@
     bottom: -15px;
     right: 0;
     width: 50px;
-
-
   }
 }
 
-
-
-// Slider  //
 .carousel-container {
   position: relative;
   width: 100%;
@@ -106,7 +97,6 @@
 .carousel-track {
   display: flex;
   transition: transform 0.3s ease-out;
-
 }
 
 .carousel-slide {
@@ -139,18 +129,14 @@
   @media screen and (max-width: 720px) {
     bottom: 50px;
     height: 80vh;
-
-
   }
 }
-
 
 .carousel-button:hover {
   @media screen and (min-width: 720px) {
     width: 80px;
     height: 50px;
   }
-
 }
 
 .carousel-button.prev {
@@ -160,8 +146,6 @@
   @media screen and (max-width: 720px) {
     background-image: none;
     left: 0;
-
-
   }
 }
 
@@ -173,9 +157,6 @@
   @media screen and (max-width: 720px) {
     background-image: none;
     right: 0;
-
-
-
   }
 }
 
