@@ -66,10 +66,10 @@ const nav = (flag) => {
 const scrolled = () => {
   if (document.querySelector('.header').offsetHeight <= scrollY + 101) {
     wrapNav.classList.add('header__wrapNav--scrol');
-    navBoard.style.backgroundColor = '#d9d9d9';
+    navBoard.style.backgroundColor = '#f6f4f0';
   } else {
     wrapNav.classList.remove('header__wrapNav--scrol');
-    navBoard.style.backgroundColor = '#fff';
+    navBoard.style.backgroundColor = '#f6f4f0';
   }
   section.forEach((e, index) => {
     navText[index].style.textShadow =

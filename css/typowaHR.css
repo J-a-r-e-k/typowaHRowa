@@ -1,4 +1,9 @@
 @charset "UTF-8";
+:root {
+  --brand-secondary: #222222;
+  --bg-main: #f6f4f0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +14,7 @@
   color: black;
   font-family: nowregular, Arial, Helvetica, sans-serif;
   font-size: 10px;
+  background-color: var(--bg-main);
 }
 * h1 {
   font-weight: normal;
@@ -259,7 +265,7 @@ body {
 }
 .offer__clickMe a {
   font-size: 3rem;
-  color: #f856a6;
+  color: var(--brand-secondary);
   font-weight: bold;
 }
 @media screen and (max-width: 720px) {
@@ -531,7 +537,7 @@ body {
   width: 100%;
   height: 100vh;
   min-height: 350px;
-  background-color: #d9d9d9;
+  background-color: var(--bg-main);
 }
 
 .header__wrapNav {
@@ -555,12 +561,12 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    background-color: #fff;
+    background-color: var(--bg-main);
   }
 }
 
 .header__wrapNav--scrol {
-  background-color: #d9d9d9;
+  background-color: var(--bg-main);
 }
 
 .header__logo {
@@ -589,7 +595,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
-  color: #ff02c9;
+  color: var(--brand-secondary);
 }
 
 @media screen and (min-width: 720px) {
@@ -607,15 +613,12 @@ body {
             transform: translateY(-50%);
     left: 110%;
     font-size: 1.2rem;
-    width: 0px;
+    width: 120px;
     overflow: hidden;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     font-size: 1.4rem;
     text-shadow: 0 0 0.1px #ccc;
-  }
-  .meet__icon:hover::after {
-    width: 120px;
   }
 }
 .nav__icon {
@@ -659,7 +662,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: #fff;
+  background-color: var(--bg-main);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -724,7 +727,7 @@ body {
 .nav__text {
   font-size: 1.8rem;
   line-height: 2em;
-  color: #000;
+  color: var(--brand-secondary);
 }
 
 .header__wrapPerson {
@@ -943,7 +946,7 @@ body {
   width: fit-content;
   border-radius: 20px;
   padding: 0 20px;
-  background-color: rgba(255, 0, 201, 0.6);
+  background-color: var(--brand-secondary);
   color: white;
   line-height: 2em;
   font-size: 1.4rem;
@@ -986,7 +989,7 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  background-color: #f8f8f8;
+  background-color: var(--bg-main);
 }
 @media (max-width: 1023px) and (orientation: portrait) {
   .bio {
@@ -1477,7 +1480,7 @@ body {
 
 .recruitment__content {
   height: 50vh;
-  background-color: #ddd;
+  background-color: var(--bg-main);
 }
 
 .talkMe {
